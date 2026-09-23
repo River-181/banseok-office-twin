@@ -1,0 +1,27 @@
+{
+ "origin": {
+  "lat": 36.3946263,
+  "lng": 127.313456,
+  "address": "대전 유성구 북유성대로 336 3층"
+ },
+ "note": "straight_m=직선거리, walk_m=도보 실거리 추정(직선×1.25), walk_min=분속 75m 기준, bearing=진북 기준 방위각, scene=도면 좌표계(m)",
+ "pois": [
+  {"name": "반석역 버스정류장(북유성대로)", "category": "버스", "lat": 36.392438, "lng": 127.314362, "straight_m": 257, "walk_m": 320, "walk_min": 4, "bearing": 162, "scene": [260.3, 68.0]},
+  {"name": "emart24 반석역점", "category": "편의점", "lat": 36.392342, "lng": 127.3145864, "straight_m": 274, "walk_m": 340, "walk_min": 5, "bearing": 158, "scene": [280.0, 56.7]},
+  {"name": "CU 대전반석점 (24h)", "category": "편의점", "lat": 36.3920723, "lng": 127.3134418, "straight_m": 284, "walk_m": 360, "walk_min": 5, "bearing": 180, "scene": [251.1, 159.5]},
+  {"name": "포유마트", "category": "마트", "lat": 36.3920368, "lng": 127.3130096, "straight_m": 291, "walk_m": 360, "walk_min": 5, "bearing": 188, "scene": [234.0, 194.5]},
+  {"name": "반석역 (1호선 종점)", "category": "지하철", "lat": 36.392124, "lng": 127.31462, "straight_m": 297, "walk_m": 370, "walk_min": 5, "bearing": 159, "scene": [302.2, 67.0]},
+  {"name": "탄동농협 외삼지점", "category": "은행", "lat": 36.3918161, "lng": 127.3126635, "straight_m": 321, "walk_m": 400, "walk_min": 5, "bearing": 193, "scene": [238.4, 233.8]},
+  {"name": "반석드림팜약국", "category": "약국", "lat": 36.3917946, "lng": 127.3126363, "straight_m": 324, "walk_m": 400, "walk_min": 5, "bearing": 193, "scene": [239.1, 237.1]},
+  {"name": "동네약국", "category": "약국", "lat": 36.3917102, "lng": 127.3138612, "straight_m": 327, "walk_m": 410, "walk_min": 5, "bearing": 174, "scene": [305.2, 149.0]},
+  {"name": "역전우동0410 반석점", "category": "식당", "lat": 36.3914824, "lng": 127.3131021, "straight_m": 351, "walk_m": 440, "walk_min": 6, "bearing": 185, "scene": [290.7, 220.2]},
+  {"name": "우리은행 노은지점", "category": "은행", "lat": 36.3914514, "lng": 127.3125764, "straight_m": 362, "walk_m": 450, "walk_min": 6, "bearing": 193, "scene": [268.7, 261.9]},
+  {"name": "KB국민은행 반석동지점", "category": "은행", "lat": 36.3913642, "lng": 127.3121694, "straight_m": 381, "walk_m": 480, "walk_min": 6, "bearing": 198, "scene": [257.6, 298.0]},
+  {"name": "반석역 시외·세종행 버스정류장", "category": "버스", "lat": 36.391489, "lng": 127.315474, "straight_m": 393, "walk_m": 490, "walk_min": 7, "bearing": 153, "scene": [402.7, 39.5]},
+  {"name": "세븐일레븐 반석중앙점", "category": "편의점", "lat": 36.3908224, "lng": 127.3122475, "straight_m": 437, "walk_m": 550, "walk_min": 7, "bearing": 194, "scene": [312.4, 324.0]},
+  {"name": "카페 온도", "category": "카페", "lat": 36.3903456, "lng": 127.3138444, "straight_m": 478, "walk_m": 600, "walk_min": 8, "bearing": 176, "scene": [433.3, 230.8]},
+  {"name": "권가제면소 반석점", "category": "식당", "lat": 36.3903659, "lng": 127.3152583, "straight_m": 501, "walk_m": 630, "walk_min": 8, "bearing": 161, "scene": [498.5, 122.2]},
+  {"name": "커피 메모리", "category": "카페", "lat": 36.3894146, "lng": 127.3142885, "straight_m": 585, "walk_m": 730, "walk_min": 10, "bearing": 173, "scene": [542.2, 252.0]},
+  {"name": "반석네거리 정류장", "category": "버스", "lat": 36.389225, "lng": 127.316709, "straight_m": 668, "walk_m": 840, "walk_min": 11, "bearing": 154, "scene": [675.1, 79.2]}
+ ]
+}

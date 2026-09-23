@@ -1,0 +1,7 @@
+{
+  "model": "sonnet",
+  "permissions": {
+    "allow": ["Read", "Edit", "Write", "Glob", "Grep", "Bash(python3:*)", "Bash(mv:*)", "Bash(mkdir:*)", "Bash(ls:*)"],
+    "deny": ["Bash(rm:*)"]
+  }
+}

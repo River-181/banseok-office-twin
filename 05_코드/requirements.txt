@@ -1,0 +1,9 @@
+numpy
+shapely
+mapbox_earcut
+fast_simplification
+trimesh
+pillow
+pillow-heif
+opencv-python-headless
+cairosvg

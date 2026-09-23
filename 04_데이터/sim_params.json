@@ -1,0 +1,42 @@
+{
+ "meta": {"version": "0.1", "note": "S2 초기값. conf=assumed 는 가정값이라 실데이터로 교체 대상.", "updated": "2026-09-22"},
+ "workday": {"start": "09:00", "end": "18:00", "lunch": ["12:00", "13:00"], "break_every_min": 120, "break_min": 10, "days_per_week": 5, "conf": "assumed"},
+ "phone": {
+  "cases_per_checker_per_day": {"value": 11.4, "source": "국세외수입 전화실태확인 계획 역산: 384만명 ÷ 전화실태확인원 2800명 ÷ 약 120 근무일", "conf": "derived"},
+  "dial_attempts_per_hour": {"value": 14, "conf": "assumed"},
+  "connect_rate": {"value": 0.35, "conf": "assumed"},
+  "talk_min": {"mean": 4.0, "sd": 1.5, "conf": "assumed"},
+  "after_call_work_min": {"value": 1.5, "conf": "assumed"},
+  "callback_request_rate": {"value": 0.15, "conf": "assumed"},
+  "callback_same_day_rate": {"value": 0.5, "conf": "assumed"},
+  "visit_referral_rate": {"value": 0.18, "note": "통화 후 방문 실태확인 대상으로 넘어가는 비율", "conf": "assumed"}
+ },
+ "visit": {
+  "visits_per_team_per_day": {"value": 4, "source": "방문 계획 역산: 68만명 ÷ 방문실태확인원 4200명 ÷ 약 120 근무일 ≈ 1.35건/인·일, 3인 1팀", "conf": "derived"},
+  "onsite_min": {"mean": 10, "sd": 5, "source": "2026-07-27 업무일지 실측 (방문 1건: 이동 74 + 상담 10 + 서류 25 ≈ 110분)", "conf": "measured_n1"},
+  "travel_min_per_visit": {"mean": 74, "sd": 25, "source": "같은 실측 1건", "conf": "measured_n1"},
+  "crew": {"size": 3, "roles": ["상담", "기록", "운전"], "driver_rotation": true, "source": "차량 운행·주차 관리.md (2026-07-10 전달)"},
+  "absent_rate": {"value": 0.4, "conf": "assumed"},
+  "km_between_cases": {"mean": 4.0, "sd": 2.0, "conf": "assumed"},
+  "office_to_first_case_km": {"mean": 8.0, "sd": 4.0, "conf": "assumed"},
+  "avg_speed_kmh": {"value": 30, "conf": "assumed"},
+  "paperwork_min_per_visit": {"value": 25, "source": "2026-07-27 실측", "conf": "measured_n1"}
+ },
+ "vehicle_defaults": {
+  "기아 EV6": {"battery_kwh": 77.4, "km_per_kwh": 5.0, "conf": "assumed (롱레인지 가정)"},
+  "현대 코나 일렉트릭": {"battery_kwh": 64.8, "km_per_kwh": 5.5, "conf": "assumed (롱레인지 가정)"},
+  "recharge_threshold_soc": 0.3
+ },
+ "stress": {
+  "per_call": 0.6, "hostile_call_rate": 0.1, "per_hostile_call": 4.0,
+  "per_visit": 2.0, "per_hostile_visit": 6.0,
+  "recovery_per_break_min": 0.5, "recovery_lunch": 15, "overnight_reset_ratio": 0.6,
+  "max": 100, "conf": "assumed"
+ },
+ "cases": {
+  "types": {"생계곤란형": 0.30, "일시자금부족형": 0.40, "고의회피형": 0.15, "연락불가형": 0.15},
+  "amount_krw": {"lognormal_mu": 13.1, "lognormal_sigma": 1.2, "note": "중앙값 약 50만원 가정 (과태료 중심)"},
+  "districts": ["유성구", "서구", "대덕구", "중구", "동구", "세종"],
+  "conf": "assumed"
+ }
+}

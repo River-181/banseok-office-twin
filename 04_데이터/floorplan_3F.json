@@ -1,0 +1,3903 @@
+{
+ "meta": {
+  "site": "대전광역시 유성구 북유성대로 336 3층 (반석동 664-3)",
+  "units": "cm",
+  "origin": "NW inner corner (drawing top-left)",
+  "axes": "x=drawing right, y=drawing down",
+  "plan_north": "drawing top = building NE face (core side). Azimuth of drawing-up ≈ 58° (Naver map footprint, walls parallel to 북유성대로)",
+  "orientation": {
+   "top": "NE 58° 코어(엘베·화장실)",
+   "right": "SE 148° 88모토 쪽 소로",
+   "bottom": "SW 238° 북유성대로",
+   "left": "NW 328° 공임나라 쪽",
+   "conf": "mid"
+  },
+  "footprint": [
+   2135,
+   1555
+  ],
+  "scale_note": "원본 도면은 축척 불일치 개략도. 치수 텍스트 우선, 미표기 치수는 국소 비례 추정",
+  "defaults": {
+   "ceiling": 260,
+   "floor_to_floor": 390,
+   "ext_wall": 30,
+   "partition": 10,
+   "door": [
+    90,
+    210
+   ],
+   "desk_h": 72,
+   "screen_h": 120
+  }
+ },
+ "rooms": [
+  {
+   "id": "RM-KT",
+   "name": "국세 전화실",
+   "kind": "enclosed",
+   "poly": [
+    [
+     0,
+     0
+    ],
+    [
+     375,
+     0
+    ],
+    [
+     375,
+     375
+    ],
+    [
+     0,
+     375
+    ]
+   ],
+   "conf": "high"
+  },
+  {
+   "id": "RM-PANTRY",
+   "name": "탕비실",
+   "kind": "enclosed",
+   "poly": [
+    [
+     375,
+     0
+    ],
+    [
+     725,
+     0
+    ],
+    [
+     725,
+     375
+    ],
+    [
+     375,
+     375
+    ]
+   ],
+   "conf": "high"
+  },
+  {
+   "id": "RM-STORE",
+   "name": "(미상) 캐비닛실/문서고",
+   "kind": "enclosed",
+   "poly": [
+    [
+     725,
+     0
+    ],
+    [
+     1075,
+     0
+    ],
+    [
+     1075,
+     375
+    ],
+    [
+     725,
+     375
+    ]
+   ],
+   "conf": "mid",
+   "note": "이름 없음. 기둥 C1 포함"
+  },
+  {
+   "id": "RM-NICHE",
+   "name": "(미상) 돌출부 소실",
+   "kind": "enclosed",
+   "poly": [
+    [
+     915,
+     -175
+    ],
+    [
+     1225,
+     -175
+    ],
+    [
+     1225,
+     0
+    ],
+    [
+     915,
+     0
+    ]
+   ],
+   "conf": "mid",
+   "note": "175 치수는 돌출 깊이로 해석. 테이블 150x90"
+  },
+  {
+   "id": "RM-R1",
+   "name": "사○○실 (라벨 잘림)",
+   "kind": "enclosed",
+   "poly": [
+    [
+     1635,
+     0
+    ],
+    [
+     2135,
+     0
+    ],
+    [
+     2135,
+     450
+    ],
+    [
+     1635,
+     450
+    ]
+   ],
+   "conf": "high"
+  },
+  {
+   "id": "RM-R2",
+   "name": "전○○실 (라벨 잘림)",
+   "kind": "enclosed",
+   "poly": [
+    [
+     1635,
+     450
+    ],
+    [
+     2135,
+     450
+    ],
+    [
+     2135,
+     850
+    ],
+    [
+     1635,
+     850
+    ]
+   ],
+   "conf": "high"
+  },
+  {
+   "id": "RM-R3",
+   "name": "(미상) 소회의/작업실 A",
+   "kind": "enclosed",
+   "poly": [
+    [
+     1745,
+     850
+    ],
+    [
+     2135,
+     850
+    ],
+    [
+     2135,
+     1050
+    ],
+    [
+     1745,
+     1050
+    ]
+   ],
+   "conf": "high"
+  },
+  {
+   "id": "RM-R4",
+   "name": "(미상) 소회의/작업실 B",
+   "kind": "enclosed",
+   "poly": [
+    [
+     1745,
+     1050
+    ],
+    [
+     2135,
+     1050
+    ],
+    [
+     2135,
+     1250
+    ],
+    [
+     1745,
+     1250
+    ]
+   ],
+   "conf": "high"
+  },
+  {
+   "id": "RM-R5",
+   "name": "(미상) 회의실",
+   "kind": "enclosed",
+   "poly": [
+    [
+     1745,
+     1250
+    ],
+    [
+     2135,
+     1250
+    ],
+    [
+     2135,
+     1555
+    ],
+    [
+     1745,
+     1555
+    ]
+   ],
+   "conf": "high",
+   "note": "우측 치수합 1530 vs 좌측 1555 -> 25cm 오차를 R5에 흡수"
+  },
+  {
+   "id": "ZN-KG",
+   "name": "국세 공무원 구역",
+   "kind": "open_zone",
+   "poly": [
+    [
+     0,
+     375
+    ],
+    [
+     380,
+     375
+    ],
+    [
+     380,
+     785
+    ],
+    [
+     0,
+     785
+    ]
+   ],
+   "conf": "high"
+  },
+  {
+   "id": "ZN-KOG",
+   "name": "국세외 공무원 구역",
+   "kind": "open_zone",
+   "poly": [
+    [
+     0,
+     785
+    ],
+    [
+     380,
+     785
+    ],
+    [
+     380,
+     1555
+    ],
+    [
+     0,
+     1555
+    ]
+   ],
+   "conf": "high"
+  },
+  {
+   "id": "ZN-KOT",
+   "name": "국세외 전화 구역",
+   "kind": "open_zone",
+   "poly": [
+    [
+     380,
+     375
+    ],
+    [
+     875,
+     375
+    ],
+    [
+     875,
+     1555
+    ],
+    [
+     380,
+     1555
+    ]
+   ],
+   "conf": "high"
+  },
+  {
+   "id": "ZN-WAIT",
+   "name": "방문실태확인원 대기공간",
+   "kind": "open_zone",
+   "poly": [
+    [
+     1055,
+     375
+    ],
+    [
+     1635,
+     375
+    ],
+    [
+     1635,
+     850
+    ],
+    [
+     1745,
+     850
+    ],
+    [
+     1745,
+     1555
+    ],
+    [
+     1055,
+     1555
+    ]
+   ],
+   "conf": "high"
+  },
+  {
+   "id": "ZN-LOBBY",
+   "name": "출입 로비/안내",
+   "kind": "open_zone",
+   "poly": [
+    [
+     1075,
+     0
+    ],
+    [
+     1635,
+     0
+    ],
+    [
+     1635,
+     375
+    ],
+    [
+     1075,
+     375
+    ]
+   ],
+   "conf": "mid"
+  }
+ ],
+ "walls": [
+  {
+   "id": "W-N",
+   "a": [
+    0,
+    0
+   ],
+   "b": [
+    2135,
+    0
+   ],
+   "type": "CORE",
+   "t": 20,
+   "conf": "high",
+   "note": "엘리베이터·화장실 코어 쪽 (River 확인)"
+  },
+  {
+   "id": "W-W",
+   "a": [
+    0,
+    0
+   ],
+   "b": [
+    0,
+    1555
+   ],
+   "type": "EXT",
+   "t": 30,
+   "conf": "mid"
+  },
+  {
+   "id": "W-S",
+   "a": [
+    0,
+    1555
+   ],
+   "b": [
+    2135,
+    1555
+   ],
+   "type": "EXT",
+   "t": 30,
+   "conf": "mid"
+  },
+  {
+   "id": "W-E",
+   "a": [
+    2135,
+    0
+   ],
+   "b": [
+    2135,
+    1555
+   ],
+   "type": "EXT",
+   "t": 30,
+   "conf": "mid"
+  },
+  {
+   "id": "W-NICHE",
+   "poly": [
+    [
+     915,
+     0
+    ],
+    [
+     915,
+     -175
+    ],
+    [
+     1225,
+     -175
+    ],
+    [
+     1225,
+     0
+    ]
+   ],
+   "type": "CORE",
+   "t": 20,
+   "conf": "mid"
+  },
+  {
+   "id": "P-KT-S",
+   "a": [
+    0,
+    375
+   ],
+   "b": [
+    375,
+    375
+   ],
+   "type": "GLS",
+   "t": 10,
+   "conf": "low",
+   "note": "국세전화실 남측: 하부불투명+상부유리 가정"
+  },
+  {
+   "id": "P-PAN-S",
+   "a": [
+    375,
+    375
+   ],
+   "b": [
+    1075,
+    375
+   ],
+   "type": "GYP",
+   "t": 10,
+   "conf": "mid"
+  },
+  {
+   "id": "P-KT-PAN",
+   "a": [
+    375,
+    0
+   ],
+   "b": [
+    375,
+    375
+   ],
+   "type": "GYP",
+   "t": 10,
+   "conf": "mid"
+  },
+  {
+   "id": "P-PAN-STO",
+   "a": [
+    725,
+    0
+   ],
+   "b": [
+    725,
+    375
+   ],
+   "type": "GYP",
+   "t": 10,
+   "conf": "mid"
+  },
+  {
+   "id": "P-STO-E",
+   "a": [
+    1075,
+    0
+   ],
+   "b": [
+    1075,
+    375
+   ],
+   "type": "GYP",
+   "t": 10,
+   "conf": "mid"
+  },
+  {
+   "id": "P-R12-W",
+   "a": [
+    1635,
+    0
+   ],
+   "b": [
+    1635,
+    850
+   ],
+   "type": "GLS",
+   "t": 10,
+   "conf": "low"
+  },
+  {
+   "id": "P-R1-R2",
+   "a": [
+    1635,
+    450
+   ],
+   "b": [
+    2135,
+    450
+   ],
+   "type": "GYP",
+   "t": 10,
+   "conf": "low"
+  },
+  {
+   "id": "P-R2-S",
+   "a": [
+    1635,
+    850
+   ],
+   "b": [
+    2135,
+    850
+   ],
+   "type": "GYP",
+   "t": 10,
+   "conf": "low"
+  },
+  {
+   "id": "P-R345-W",
+   "a": [
+    1745,
+    850
+   ],
+   "b": [
+    1745,
+    1555
+   ],
+   "type": "GLS_FILM",
+   "t": 10,
+   "conf": "low"
+  },
+  {
+   "id": "P-R3-R4",
+   "a": [
+    1745,
+    1050
+   ],
+   "b": [
+    2135,
+    1050
+   ],
+   "type": "GYP",
+   "t": 10,
+   "conf": "low"
+  },
+  {
+   "id": "P-R4-R5",
+   "a": [
+    1745,
+    1250
+   ],
+   "b": [
+    2135,
+    1250
+   ],
+   "type": "GYP",
+   "t": 10,
+   "conf": "low"
+  }
+ ],
+ "doors": [
+  {
+   "id": "D-ENT",
+   "wall": "W-N",
+   "axis": "x",
+   "span": [
+    1410,
+    1575
+   ],
+   "into": "south",
+   "kind": "양개 강화유리문(가정)",
+   "h": 240,
+   "conf": "mid",
+   "note": "도면 스윙선 길이 ~165cm"
+  },
+  {
+   "id": "D-NICHE",
+   "wall": "W-N",
+   "axis": "x",
+   "span": [
+    1130,
+    1225
+   ],
+   "into": "north",
+   "kind": "여닫이",
+   "h": 210,
+   "conf": "mid"
+  },
+  {
+   "id": "D-KT",
+   "wall": "P-KT-S",
+   "axis": "x",
+   "span": [
+    275,
+    365
+   ],
+   "into": "north",
+   "kind": "여닫이(유리 가정)",
+   "h": 210,
+   "conf": "high"
+  },
+  {
+   "id": "D-PAN",
+   "wall": "P-PAN-S",
+   "axis": "x",
+   "span": [
+    630,
+    720
+   ],
+   "into": "north",
+   "kind": "여닫이",
+   "h": 210,
+   "conf": "high"
+  },
+  {
+   "id": "D-STO",
+   "wall": "P-PAN-S",
+   "axis": "x",
+   "span": [
+    730,
+    835
+   ],
+   "into": "north",
+   "kind": "여닫이",
+   "h": 210,
+   "conf": "high"
+  },
+  {
+   "id": "D-R1",
+   "wall": "P-R12-W",
+   "axis": "y",
+   "span": [
+    355,
+    450
+   ],
+   "into": "east",
+   "kind": "여닫이(유리 가정)",
+   "h": 210,
+   "conf": "high"
+  },
+  {
+   "id": "D-R2",
+   "wall": "P-R12-W",
+   "axis": "y",
+   "span": [
+    460,
+    555
+   ],
+   "into": "east",
+   "kind": "여닫이(유리 가정)",
+   "h": 210,
+   "conf": "high"
+  },
+  {
+   "id": "D-R3",
+   "wall": "P-R345-W",
+   "axis": "y",
+   "span": [
+    855,
+    950
+   ],
+   "into": "east",
+   "kind": "여닫이(유리 가정)",
+   "h": 210,
+   "conf": "high"
+  },
+  {
+   "id": "D-R4",
+   "wall": "P-R345-W",
+   "axis": "y",
+   "span": [
+    1055,
+    1150
+   ],
+   "into": "east",
+   "kind": "여닫이(유리 가정)",
+   "h": 210,
+   "conf": "high"
+  },
+  {
+   "id": "D-R5",
+   "wall": "P-R345-W",
+   "axis": "y",
+   "span": [
+    1255,
+    1350
+   ],
+   "into": "east",
+   "kind": "여닫이(유리 가정)",
+   "h": 210,
+   "conf": "high"
+  }
+ ],
+ "windows": [
+  {
+   "id": "WIN-W",
+   "wall": "W-W",
+   "kind": "ribbon",
+   "sill": 85,
+   "head": 245,
+   "mullion_pitch": 150,
+   "conf": "mid",
+   "note": "3면 창 존재 확인(River). 로드뷰상 커튼월 띠창 + 일부 프로젝트창. 창대·상단 높이는 가정"
+  },
+  {
+   "id": "WIN-S",
+   "wall": "W-S",
+   "kind": "ribbon",
+   "sill": 85,
+   "head": 245,
+   "mullion_pitch": 150,
+   "conf": "mid",
+   "note": "3면 창 존재 확인(River). 로드뷰상 커튼월 띠창 + 일부 프로젝트창. 창대·상단 높이는 가정"
+  },
+  {
+   "id": "WIN-E",
+   "wall": "W-E",
+   "kind": "ribbon",
+   "sill": 85,
+   "head": 245,
+   "mullion_pitch": 150,
+   "conf": "mid",
+   "note": "3면 창 존재 확인(River). 로드뷰상 커튼월 띠창 + 일부 프로젝트창. 창대·상단 높이는 가정"
+  }
+ ],
+ "columns": [
+  {
+   "id": "C1",
+   "type": "column",
+   "label": "기둥",
+   "x": 910,
+   "y": 0,
+   "w": 100,
+   "d": 100,
+   "h": 260,
+   "conf": "mid",
+   "note": "도면상 ~100x100"
+  },
+  {
+   "id": "C2",
+   "type": "column",
+   "label": "기둥",
+   "x": 2065,
+   "y": 1485,
+   "w": 70,
+   "d": 70,
+   "h": 260,
+   "conf": "mid"
+  }
+ ],
+ "partitions": [
+  {
+   "id": "PT-KG1",
+   "a": [
+    20,
+    620
+   ],
+   "b": [
+    320,
+    620
+   ],
+   "h": 120,
+   "type": "screen",
+   "conf": "mid"
+  },
+  {
+   "id": "PT-KG2",
+   "a": [
+    160,
+    620
+   ],
+   "b": [
+    160,
+    776
+   ],
+   "h": 120,
+   "type": "screen",
+   "conf": "mid"
+  },
+  {
+   "id": "PT-FREE",
+   "a": [
+    378,
+    440
+   ],
+   "b": [
+    378,
+    640
+   ],
+   "h": 150,
+   "type": "screen",
+   "conf": "mid"
+  },
+  {
+   "id": "PT-KOG1",
+   "a": [
+    20,
+    1032
+   ],
+   "b": [
+    320,
+    1032
+   ],
+   "h": 120,
+   "type": "screen",
+   "conf": "mid"
+  },
+  {
+   "id": "PT-KOG3",
+   "a": [
+    20,
+    1328
+   ],
+   "b": [
+    320,
+    1328
+   ],
+   "h": 120,
+   "type": "screen",
+   "conf": "mid"
+  },
+  {
+   "id": "PT-KOG4",
+   "a": [
+    160,
+    1032
+   ],
+   "b": [
+    160,
+    1328
+   ],
+   "h": 120,
+   "type": "screen",
+   "conf": "mid"
+  },
+  {
+   "id": "PT-KOT-W",
+   "a": [
+    378,
+    655
+   ],
+   "b": [
+    378,
+    1555
+   ],
+   "h": 120,
+   "type": "screen",
+   "conf": "mid"
+  },
+  {
+   "id": "DS-KOT1-F",
+   "a": [
+    385,
+    800
+   ],
+   "b": [
+    785,
+    800
+   ],
+   "h": 110,
+   "type": "desk_screen",
+   "conf": "mid"
+  },
+  {
+   "id": "DS-KOT1-S1",
+   "a": [
+    485,
+    740
+   ],
+   "b": [
+    485,
+    860
+   ],
+   "h": 110,
+   "type": "desk_screen",
+   "conf": "mid"
+  },
+  {
+   "id": "DS-KOT1-S2",
+   "a": [
+    585,
+    740
+   ],
+   "b": [
+    585,
+    860
+   ],
+   "h": 110,
+   "type": "desk_screen",
+   "conf": "mid"
+  },
+  {
+   "id": "DS-KOT1-S3",
+   "a": [
+    685,
+    740
+   ],
+   "b": [
+    685,
+    860
+   ],
+   "h": 110,
+   "type": "desk_screen",
+   "conf": "mid"
+  },
+  {
+   "id": "DS-KOT2-F",
+   "a": [
+    385,
+    1100
+   ],
+   "b": [
+    785,
+    1100
+   ],
+   "h": 110,
+   "type": "desk_screen",
+   "conf": "mid"
+  },
+  {
+   "id": "DS-KOT2-S1",
+   "a": [
+    485,
+    1040
+   ],
+   "b": [
+    485,
+    1160
+   ],
+   "h": 110,
+   "type": "desk_screen",
+   "conf": "mid"
+  },
+  {
+   "id": "DS-KOT2-S2",
+   "a": [
+    585,
+    1040
+   ],
+   "b": [
+    585,
+    1160
+   ],
+   "h": 110,
+   "type": "desk_screen",
+   "conf": "mid"
+  },
+  {
+   "id": "DS-KOT2-S3",
+   "a": [
+    685,
+    1040
+   ],
+   "b": [
+    685,
+    1160
+   ],
+   "h": 110,
+   "type": "desk_screen",
+   "conf": "mid"
+  },
+  {
+   "id": "DS-KOT3-F",
+   "a": [
+    385,
+    1400
+   ],
+   "b": [
+    785,
+    1400
+   ],
+   "h": 110,
+   "type": "desk_screen",
+   "conf": "mid"
+  },
+  {
+   "id": "DS-KOT3-S1",
+   "a": [
+    485,
+    1340
+   ],
+   "b": [
+    485,
+    1460
+   ],
+   "h": 110,
+   "type": "desk_screen",
+   "conf": "mid"
+  },
+  {
+   "id": "DS-KOT3-S2",
+   "a": [
+    585,
+    1340
+   ],
+   "b": [
+    585,
+    1460
+   ],
+   "h": 110,
+   "type": "desk_screen",
+   "conf": "mid"
+  },
+  {
+   "id": "DS-KOT3-S3",
+   "a": [
+    685,
+    1340
+   ],
+   "b": [
+    685,
+    1460
+   ],
+   "h": 110,
+   "type": "desk_screen",
+   "conf": "mid"
+  },
+  {
+   "id": "DS-KT-F",
+   "a": [
+    125,
+    75
+   ],
+   "b": [
+    125,
+    315
+   ],
+   "h": 110,
+   "type": "desk_screen",
+   "conf": "mid"
+  },
+  {
+   "id": "DS-KT-S",
+   "a": [
+    65,
+    195
+   ],
+   "b": [
+    185,
+    195
+   ],
+   "h": 110,
+   "type": "desk_screen",
+   "conf": "mid"
+  }
+ ],
+ "furniture": [
+  {
+   "id": "KT-P1",
+   "type": "printer",
+   "label": "프린터",
+   "x": 96,
+   "y": 0,
+   "w": 46,
+   "d": 45,
+   "h": 90,
+   "room": "RM-KT"
+  },
+  {
+   "id": "KT-P2",
+   "type": "printer",
+   "label": "프린터",
+   "x": 143,
+   "y": 0,
+   "w": 46,
+   "d": 45,
+   "h": 90,
+   "room": "RM-KT"
+  },
+  {
+   "id": "KT-D1",
+   "type": "desk",
+   "label": "전화(내+전)",
+   "x": 65,
+   "y": 75,
+   "w": 60,
+   "d": 120,
+   "h": 72,
+   "rot": 90,
+   "room": "RM-KT",
+   "equip": [
+    "내부망PC",
+    "전화"
+   ],
+   "seat_no": "국전-01"
+  },
+  {
+   "id": "KT-D2",
+   "type": "desk",
+   "label": "전화(내+전)",
+   "x": 125,
+   "y": 75,
+   "w": 60,
+   "d": 120,
+   "h": 72,
+   "rot": 90,
+   "room": "RM-KT",
+   "equip": [
+    "내부망PC",
+    "전화"
+   ],
+   "seat_no": "국전-02"
+  },
+  {
+   "id": "KT-D3",
+   "type": "desk",
+   "label": "전화(내+전)",
+   "x": 65,
+   "y": 195,
+   "w": 60,
+   "d": 120,
+   "h": 72,
+   "rot": 90,
+   "room": "RM-KT",
+   "equip": [
+    "내부망PC",
+    "전화"
+   ],
+   "seat_no": "국전-03"
+  },
+  {
+   "id": "KT-D4",
+   "type": "desk",
+   "label": "전화(내+전)",
+   "x": 125,
+   "y": 195,
+   "w": 60,
+   "d": 120,
+   "h": 72,
+   "rot": 90,
+   "room": "RM-KT",
+   "equip": [
+    "내부망PC",
+    "전화"
+   ],
+   "seat_no": "국전-04"
+  },
+  {
+   "id": "KT-D5",
+   "type": "desk",
+   "label": "전화(내+전)",
+   "x": 315,
+   "y": 20,
+   "w": 60,
+   "d": 120,
+   "h": 72,
+   "rot": 90,
+   "room": "RM-KT",
+   "equip": [
+    "내부망PC",
+    "전화"
+   ],
+   "seat_no": "국전-05"
+  },
+  {
+   "id": "KT-D6",
+   "type": "desk",
+   "label": "전화(내+전)",
+   "x": 315,
+   "y": 140,
+   "w": 60,
+   "d": 120,
+   "h": 72,
+   "rot": 90,
+   "room": "RM-KT",
+   "equip": [
+    "내부망PC",
+    "전화"
+   ],
+   "seat_no": "국전-06"
+  },
+  {
+   "id": "PAN-WD",
+   "type": "water_dispenser",
+   "label": "정수기",
+   "x": 380,
+   "y": 45,
+   "w": 40,
+   "d": 40,
+   "h": 110,
+   "room": "RM-PANTRY"
+  },
+  {
+   "id": "PAN-SINK",
+   "type": "sink_counter",
+   "label": "싱크대",
+   "x": 375,
+   "y": 90,
+   "w": 60,
+   "d": 220,
+   "h": 85,
+   "room": "RM-PANTRY"
+  },
+  {
+   "id": "PAN-FR",
+   "type": "fridge",
+   "label": "냉장고",
+   "x": 375,
+   "y": 310,
+   "w": 65,
+   "d": 65,
+   "h": 180,
+   "room": "RM-PANTRY"
+  },
+  {
+   "id": "PAN-T1",
+   "type": "table",
+   "label": "테이블",
+   "x": 430,
+   "y": 5,
+   "w": 90,
+   "d": 60,
+   "h": 72,
+   "room": "RM-PANTRY"
+  },
+  {
+   "id": "PAN-RT1",
+   "type": "round_table",
+   "label": "원탁 Ø80",
+   "x": 515,
+   "y": 110,
+   "w": 80,
+   "d": 80,
+   "h": 72,
+   "room": "RM-PANTRY"
+  },
+  {
+   "id": "PAN-RT2",
+   "type": "round_table",
+   "label": "원탁 Ø80",
+   "x": 515,
+   "y": 230,
+   "w": 80,
+   "d": 80,
+   "h": 72,
+   "room": "RM-PANTRY"
+  },
+  {
+   "id": "STO-CAB1",
+   "type": "cabinet",
+   "label": "캐비닛",
+   "x": 725,
+   "y": 0,
+   "w": 55,
+   "d": 45,
+   "h": 180,
+   "room": "RM-STORE"
+  },
+  {
+   "id": "STO-CAB2",
+   "type": "cabinet",
+   "label": "캐비닛",
+   "x": 725,
+   "y": 45,
+   "w": 55,
+   "d": 45,
+   "h": 180,
+   "room": "RM-STORE"
+  },
+  {
+   "id": "STO-CAB3",
+   "type": "cabinet",
+   "label": "캐비닛",
+   "x": 725,
+   "y": 90,
+   "w": 55,
+   "d": 45,
+   "h": 180,
+   "room": "RM-STORE"
+  },
+  {
+   "id": "STO-CAB4",
+   "type": "cabinet",
+   "label": "캐비닛",
+   "x": 725,
+   "y": 135,
+   "w": 55,
+   "d": 45,
+   "h": 180,
+   "room": "RM-STORE"
+  },
+  {
+   "id": "STO-CAB5",
+   "type": "cabinet",
+   "label": "캐비닛",
+   "x": 725,
+   "y": 180,
+   "w": 55,
+   "d": 45,
+   "h": 180,
+   "room": "RM-STORE"
+  },
+  {
+   "id": "STO-CAB6",
+   "type": "cabinet",
+   "label": "캐비닛",
+   "x": 725,
+   "y": 225,
+   "w": 55,
+   "d": 45,
+   "h": 180,
+   "room": "RM-STORE"
+  },
+  {
+   "id": "STO-CAB7",
+   "type": "cabinet",
+   "label": "캐비닛",
+   "x": 1020,
+   "y": 190,
+   "w": 55,
+   "d": 45,
+   "h": 180,
+   "room": "RM-STORE"
+  },
+  {
+   "id": "STO-CAB8",
+   "type": "cabinet",
+   "label": "캐비닛",
+   "x": 1020,
+   "y": 235,
+   "w": 55,
+   "d": 45,
+   "h": 180,
+   "room": "RM-STORE"
+  },
+  {
+   "id": "STO-CAB9",
+   "type": "cabinet",
+   "label": "캐비닛",
+   "x": 1020,
+   "y": 280,
+   "w": 55,
+   "d": 45,
+   "h": 180,
+   "room": "RM-STORE"
+  },
+  {
+   "id": "STO-CAB10",
+   "type": "cabinet",
+   "label": "캐비닛",
+   "x": 1020,
+   "y": 325,
+   "w": 55,
+   "d": 45,
+   "h": 180,
+   "room": "RM-STORE"
+  },
+  {
+   "id": "NIC-T1",
+   "type": "table",
+   "label": "테이블 150x90",
+   "x": 920,
+   "y": -175,
+   "w": 150,
+   "d": 90,
+   "h": 72,
+   "room": "RM-NICHE"
+  },
+  {
+   "id": "LOB-CAB1",
+   "type": "cabinet",
+   "label": "캐비닛",
+   "x": 1075,
+   "y": 270,
+   "w": 55,
+   "d": 45,
+   "h": 180,
+   "zone": "ZN-LOBBY"
+  },
+  {
+   "id": "LOB-CAB2",
+   "type": "cabinet",
+   "label": "캐비닛",
+   "x": 1075,
+   "y": 315,
+   "w": 55,
+   "d": 45,
+   "h": 180,
+   "zone": "ZN-LOBBY"
+  },
+  {
+   "id": "LOB-FR1",
+   "type": "fridge",
+   "label": "냉장고",
+   "x": 905,
+   "y": 380,
+   "w": 60,
+   "d": 60,
+   "h": 180,
+   "zone": "ZN-KOT"
+  },
+  {
+   "id": "LOB-FR2",
+   "type": "fridge",
+   "label": "냉장고",
+   "x": 965,
+   "y": 380,
+   "w": 60,
+   "d": 60,
+   "h": 180,
+   "zone": "ZN-KOT"
+  },
+  {
+   "id": "LOB-WD",
+   "type": "water_dispenser",
+   "label": "정수기",
+   "x": 1025,
+   "y": 380,
+   "w": 45,
+   "d": 45,
+   "h": 110,
+   "zone": "ZN-KOT"
+  },
+  {
+   "id": "LOB-MG1",
+   "type": "desk",
+   "label": "관리(내)",
+   "x": 1260,
+   "y": 10,
+   "w": 90,
+   "d": 95,
+   "h": 72,
+   "zone": "ZN-LOBBY",
+   "equip": [
+    "내부망PC"
+   ],
+   "conf": "low",
+   "seat_no": "관리-01"
+  },
+  {
+   "id": "LOB-MG2",
+   "type": "desk",
+   "label": "관리(내)",
+   "x": 1260,
+   "y": 105,
+   "w": 90,
+   "d": 95,
+   "h": 72,
+   "zone": "ZN-LOBBY",
+   "equip": [
+    "내부망PC"
+   ],
+   "conf": "low",
+   "seat_no": "관리-02"
+  },
+  {
+   "id": "LOB-INFO",
+   "type": "reception",
+   "label": "안내데스크",
+   "x": 1353,
+   "y": 10,
+   "w": 55,
+   "d": 190,
+   "h": 105,
+   "zone": "ZN-LOBBY"
+  },
+  {
+   "id": "KG-CAB",
+   "type": "cabinet",
+   "label": "캐비닛",
+   "x": 0,
+   "y": 380,
+   "w": 50,
+   "d": 45,
+   "h": 180,
+   "zone": "ZN-KG"
+  },
+  {
+   "id": "KG-OP",
+   "type": "desk",
+   "label": "운영공무원(내+외+전)",
+   "x": 90,
+   "y": 465,
+   "w": 140,
+   "d": 70,
+   "h": 72,
+   "zone": "ZN-KG",
+   "equip": [
+    "내부망PC",
+    "외부망PC",
+    "전화"
+   ],
+   "seat_no": "국공-01"
+  },
+  {
+   "id": "KG-PR",
+   "type": "printer",
+   "label": "프린터",
+   "x": 300,
+   "y": 380,
+   "w": 50,
+   "d": 45,
+   "h": 90,
+   "zone": "ZN-KG"
+  },
+  {
+   "id": "KG-D1",
+   "type": "desk",
+   "label": "동행공무원(내+외)",
+   "x": 90,
+   "y": 628,
+   "w": 70,
+   "d": 140,
+   "h": 72,
+   "rot": 90,
+   "zone": "ZN-KG",
+   "equip": [
+    "내부망PC",
+    "외부망PC"
+   ],
+   "seat_no": "국공-02"
+  },
+  {
+   "id": "KG-D2",
+   "type": "desk",
+   "label": "동행공무원(내+외+전)",
+   "x": 160,
+   "y": 628,
+   "w": 70,
+   "d": 140,
+   "h": 72,
+   "rot": 90,
+   "zone": "ZN-KG",
+   "equip": [
+    "내부망PC",
+    "외부망PC",
+    "전화"
+   ],
+   "seat_no": "국공-03"
+  },
+  {
+   "id": "KOG-CAB",
+   "type": "cabinet",
+   "label": "캐비닛",
+   "x": 0,
+   "y": 785,
+   "w": 50,
+   "d": 45,
+   "h": 180,
+   "zone": "ZN-KOG"
+  },
+  {
+   "id": "KOG-OP",
+   "type": "desk",
+   "label": "운영공무원(내+외+전)",
+   "x": 90,
+   "y": 880,
+   "w": 140,
+   "d": 70,
+   "h": 72,
+   "zone": "ZN-KOG",
+   "equip": [
+    "내부망PC",
+    "외부망PC",
+    "전화"
+   ],
+   "seat_no": "외공-01"
+  },
+  {
+   "id": "KOG-PR1",
+   "type": "printer",
+   "label": "프린터",
+   "x": 300,
+   "y": 790,
+   "w": 50,
+   "d": 45,
+   "h": 90,
+   "zone": "ZN-KOG"
+  },
+  {
+   "id": "KOG-D1",
+   "type": "desk",
+   "label": "운영공무원(내+외+전)",
+   "x": 90,
+   "y": 1040,
+   "w": 70,
+   "d": 140,
+   "h": 72,
+   "rot": 90,
+   "zone": "ZN-KOG",
+   "seat_no": "외공-02"
+  },
+  {
+   "id": "KOG-D2",
+   "type": "desk",
+   "label": "동행공무원(내+외)",
+   "x": 160,
+   "y": 1040,
+   "w": 70,
+   "d": 140,
+   "h": 72,
+   "rot": 90,
+   "zone": "ZN-KOG",
+   "seat_no": "외공-03"
+  },
+  {
+   "id": "KOG-D3",
+   "type": "desk",
+   "label": "동행공무원(내+외)",
+   "x": 90,
+   "y": 1180,
+   "w": 70,
+   "d": 140,
+   "h": 72,
+   "rot": 90,
+   "zone": "ZN-KOG",
+   "seat_no": "외공-04"
+  },
+  {
+   "id": "KOG-D4",
+   "type": "desk",
+   "label": "동행공무원(내+외)",
+   "x": 160,
+   "y": 1180,
+   "w": 70,
+   "d": 140,
+   "h": 72,
+   "rot": 90,
+   "zone": "ZN-KOG",
+   "seat_no": "외공-05"
+  },
+  {
+   "id": "KOG-PR2",
+   "type": "printer",
+   "label": "프린터",
+   "x": 180,
+   "y": 1450,
+   "w": 50,
+   "d": 45,
+   "h": 90,
+   "zone": "ZN-KOG"
+  },
+  {
+   "id": "KOG-PR3",
+   "type": "printer",
+   "label": "프린터",
+   "x": 230,
+   "y": 1450,
+   "w": 50,
+   "d": 45,
+   "h": 90,
+   "zone": "ZN-KOG"
+  },
+  {
+   "id": "KOG-PR4",
+   "type": "printer",
+   "label": "프린터",
+   "x": 280,
+   "y": 1450,
+   "w": 50,
+   "d": 45,
+   "h": 90,
+   "zone": "ZN-KOG"
+  },
+  {
+   "id": "KOG-RACK",
+   "type": "equipment_rack",
+   "label": "장비랙",
+   "x": 0,
+   "y": 1505,
+   "w": 155,
+   "d": 50,
+   "h": 200,
+   "zone": "ZN-KOG"
+  },
+  {
+   "id": "KOT-C1R1-1",
+   "type": "desk",
+   "label": "전화(내+전)",
+   "x": 385,
+   "y": 740,
+   "w": 100,
+   "d": 60,
+   "h": 72,
+   "zone": "ZN-KOT",
+   "equip": [
+    "내부망PC",
+    "전화"
+   ],
+   "conf": "mid",
+   "seat_no": "외전-01"
+  },
+  {
+   "id": "KOT-C1R1-2",
+   "type": "desk",
+   "label": "전화(내+전)",
+   "x": 485,
+   "y": 740,
+   "w": 100,
+   "d": 60,
+   "h": 72,
+   "zone": "ZN-KOT",
+   "equip": [
+    "내부망PC",
+    "전화"
+   ],
+   "conf": "mid",
+   "seat_no": "외전-02"
+  },
+  {
+   "id": "KOT-C1R1-3",
+   "type": "desk",
+   "label": "전화(내+전)",
+   "x": 585,
+   "y": 740,
+   "w": 100,
+   "d": 60,
+   "h": 72,
+   "zone": "ZN-KOT",
+   "equip": [
+    "내부망PC",
+    "전화"
+   ],
+   "conf": "mid",
+   "seat_no": "외전-03"
+  },
+  {
+   "id": "KOT-C1R1-4",
+   "type": "desk",
+   "label": "전화(내+전)",
+   "x": 685,
+   "y": 740,
+   "w": 100,
+   "d": 60,
+   "h": 72,
+   "zone": "ZN-KOT",
+   "equip": [
+    "내부망PC",
+    "전화"
+   ],
+   "conf": "mid",
+   "seat_no": "외전-04"
+  },
+  {
+   "id": "KOT-C1R2-1",
+   "type": "desk",
+   "label": "전화(내+전)",
+   "x": 385,
+   "y": 800,
+   "w": 100,
+   "d": 60,
+   "h": 72,
+   "zone": "ZN-KOT",
+   "equip": [
+    "내부망PC",
+    "전화"
+   ],
+   "conf": "mid",
+   "seat_no": "외전-05"
+  },
+  {
+   "id": "KOT-C1R2-2",
+   "type": "desk",
+   "label": "전화(내+전)",
+   "x": 485,
+   "y": 800,
+   "w": 100,
+   "d": 60,
+   "h": 72,
+   "zone": "ZN-KOT",
+   "equip": [
+    "내부망PC",
+    "전화"
+   ],
+   "conf": "mid",
+   "seat_no": "외전-06"
+  },
+  {
+   "id": "KOT-C1R2-3",
+   "type": "desk",
+   "label": "전화(내+전)",
+   "x": 585,
+   "y": 800,
+   "w": 100,
+   "d": 60,
+   "h": 72,
+   "zone": "ZN-KOT",
+   "equip": [
+    "내부망PC",
+    "전화"
+   ],
+   "conf": "mid",
+   "seat_no": "외전-07"
+  },
+  {
+   "id": "KOT-C1R2-4",
+   "type": "desk",
+   "label": "전화(내+전)",
+   "x": 685,
+   "y": 800,
+   "w": 100,
+   "d": 60,
+   "h": 72,
+   "zone": "ZN-KOT",
+   "equip": [
+    "내부망PC",
+    "전화"
+   ],
+   "conf": "mid",
+   "seat_no": "외전-08"
+  },
+  {
+   "id": "KOT-C2R1-1",
+   "type": "desk",
+   "label": "전화(내+전)",
+   "x": 385,
+   "y": 1040,
+   "w": 100,
+   "d": 60,
+   "h": 72,
+   "zone": "ZN-KOT",
+   "equip": [
+    "내부망PC",
+    "전화"
+   ],
+   "conf": "mid",
+   "seat_no": "외전-09"
+  },
+  {
+   "id": "KOT-C2R1-2",
+   "type": "desk",
+   "label": "전화(내+전)",
+   "x": 485,
+   "y": 1040,
+   "w": 100,
+   "d": 60,
+   "h": 72,
+   "zone": "ZN-KOT",
+   "equip": [
+    "내부망PC",
+    "전화"
+   ],
+   "conf": "mid",
+   "seat_no": "외전-10"
+  },
+  {
+   "id": "KOT-C2R1-3",
+   "type": "desk",
+   "label": "전화(내+전)",
+   "x": 585,
+   "y": 1040,
+   "w": 100,
+   "d": 60,
+   "h": 72,
+   "zone": "ZN-KOT",
+   "equip": [
+    "내부망PC",
+    "전화"
+   ],
+   "conf": "mid",
+   "seat_no": "외전-11"
+  },
+  {
+   "id": "KOT-C2R1-4",
+   "type": "desk",
+   "label": "전화(내+전)",
+   "x": 685,
+   "y": 1040,
+   "w": 100,
+   "d": 60,
+   "h": 72,
+   "zone": "ZN-KOT",
+   "equip": [
+    "내부망PC",
+    "전화"
+   ],
+   "conf": "mid",
+   "seat_no": "외전-12"
+  },
+  {
+   "id": "KOT-C2R2-1",
+   "type": "desk",
+   "label": "전화(내+전)",
+   "x": 385,
+   "y": 1100,
+   "w": 100,
+   "d": 60,
+   "h": 72,
+   "zone": "ZN-KOT",
+   "equip": [
+    "내부망PC",
+    "전화"
+   ],
+   "conf": "mid",
+   "seat_no": "외전-13"
+  },
+  {
+   "id": "KOT-C2R2-2",
+   "type": "desk",
+   "label": "전화(내+전)",
+   "x": 485,
+   "y": 1100,
+   "w": 100,
+   "d": 60,
+   "h": 72,
+   "zone": "ZN-KOT",
+   "equip": [
+    "내부망PC",
+    "전화"
+   ],
+   "conf": "mid",
+   "seat_no": "외전-14"
+  },
+  {
+   "id": "KOT-C2R2-3",
+   "type": "desk",
+   "label": "전화(내+전)",
+   "x": 585,
+   "y": 1100,
+   "w": 100,
+   "d": 60,
+   "h": 72,
+   "zone": "ZN-KOT",
+   "equip": [
+    "내부망PC",
+    "전화"
+   ],
+   "conf": "mid",
+   "seat_no": "외전-15"
+  },
+  {
+   "id": "KOT-C2R2-4",
+   "type": "desk",
+   "label": "전화(내+전)",
+   "x": 685,
+   "y": 1100,
+   "w": 100,
+   "d": 60,
+   "h": 72,
+   "zone": "ZN-KOT",
+   "equip": [
+    "내부망PC",
+    "전화"
+   ],
+   "conf": "mid",
+   "seat_no": "외전-16"
+  },
+  {
+   "id": "KOT-C3R1-1",
+   "type": "desk",
+   "label": "전화(내+전)",
+   "x": 385,
+   "y": 1340,
+   "w": 100,
+   "d": 60,
+   "h": 72,
+   "zone": "ZN-KOT",
+   "equip": [
+    "내부망PC",
+    "전화"
+   ],
+   "conf": "mid",
+   "seat_no": "외전-17"
+  },
+  {
+   "id": "KOT-C3R1-2",
+   "type": "desk",
+   "label": "전화(내+전)",
+   "x": 485,
+   "y": 1340,
+   "w": 100,
+   "d": 60,
+   "h": 72,
+   "zone": "ZN-KOT",
+   "equip": [
+    "내부망PC",
+    "전화"
+   ],
+   "conf": "mid",
+   "seat_no": "외전-18"
+  },
+  {
+   "id": "KOT-C3R1-3",
+   "type": "desk",
+   "label": "전화(내+전)",
+   "x": 585,
+   "y": 1340,
+   "w": 100,
+   "d": 60,
+   "h": 72,
+   "zone": "ZN-KOT",
+   "equip": [
+    "내부망PC",
+    "전화"
+   ],
+   "conf": "mid",
+   "seat_no": "외전-19"
+  },
+  {
+   "id": "KOT-C3R1-4",
+   "type": "desk",
+   "label": "전화(내+전)",
+   "x": 685,
+   "y": 1340,
+   "w": 100,
+   "d": 60,
+   "h": 72,
+   "zone": "ZN-KOT",
+   "equip": [
+    "내부망PC",
+    "전화"
+   ],
+   "conf": "mid",
+   "seat_no": "외전-20"
+  },
+  {
+   "id": "KOT-C3R2-1",
+   "type": "desk",
+   "label": "전화(내+전)",
+   "x": 385,
+   "y": 1400,
+   "w": 100,
+   "d": 60,
+   "h": 72,
+   "zone": "ZN-KOT",
+   "equip": [
+    "내부망PC",
+    "전화"
+   ],
+   "conf": "mid",
+   "seat_no": "외전-21"
+  },
+  {
+   "id": "KOT-C3R2-2",
+   "type": "desk",
+   "label": "전화(내+전)",
+   "x": 485,
+   "y": 1400,
+   "w": 100,
+   "d": 60,
+   "h": 72,
+   "zone": "ZN-KOT",
+   "equip": [
+    "내부망PC",
+    "전화"
+   ],
+   "conf": "mid",
+   "seat_no": "외전-22"
+  },
+  {
+   "id": "KOT-C3R2-3",
+   "type": "desk",
+   "label": "전화(내+전)",
+   "x": 585,
+   "y": 1400,
+   "w": 100,
+   "d": 60,
+   "h": 72,
+   "zone": "ZN-KOT",
+   "equip": [
+    "내부망PC",
+    "전화"
+   ],
+   "conf": "mid",
+   "seat_no": "외전-23"
+  },
+  {
+   "id": "KOT-C3R2-4",
+   "type": "desk",
+   "label": "전화(내+전)",
+   "x": 685,
+   "y": 1400,
+   "w": 100,
+   "d": 60,
+   "h": 72,
+   "zone": "ZN-KOT",
+   "equip": [
+    "내부망PC",
+    "전화"
+   ],
+   "conf": "mid",
+   "seat_no": "외전-24"
+  },
+  {
+   "id": "LOCKER",
+   "type": "locker",
+   "label": "사물함",
+   "x": 875,
+   "y": 780,
+   "w": 45,
+   "d": 775,
+   "h": 180,
+   "zone": "ZN-KOT"
+  },
+  {
+   "id": "WALL-SHELF",
+   "type": "partition",
+   "label": "가벽",
+   "x": 920,
+   "y": 705,
+   "w": 6,
+   "d": 850,
+   "h": 180,
+   "zone": "ZN-WAIT"
+  },
+  {
+   "id": "SHELF",
+   "type": "shelf",
+   "label": "선반",
+   "x": 926,
+   "y": 705,
+   "w": 40,
+   "d": 850,
+   "h": 180,
+   "zone": "ZN-WAIT"
+  },
+  {
+   "id": "MFP1",
+   "type": "mfp",
+   "label": "복합기",
+   "x": 1000,
+   "y": 645,
+   "w": 62,
+   "d": 55,
+   "h": 110,
+   "zone": "ZN-WAIT"
+  },
+  {
+   "id": "MFP2",
+   "type": "mfp",
+   "label": "복합기",
+   "x": 1062,
+   "y": 645,
+   "w": 62,
+   "d": 55,
+   "h": 110,
+   "zone": "ZN-WAIT"
+  },
+  {
+   "id": "SHRED",
+   "type": "shredder",
+   "label": "세단기",
+   "x": 1124,
+   "y": 645,
+   "w": 61,
+   "d": 55,
+   "h": 80,
+   "zone": "ZN-WAIT"
+  },
+  {
+   "id": "WALL-SHORT",
+   "type": "partition",
+   "label": "가벽",
+   "x": 1055,
+   "y": 705,
+   "w": 105,
+   "d": 40,
+   "h": 150,
+   "zone": "ZN-WAIT"
+  },
+  {
+   "id": "WAIT-WD",
+   "type": "water_dispenser",
+   "label": "정수기",
+   "x": 1072,
+   "y": 750,
+   "w": 55,
+   "d": 42,
+   "h": 110,
+   "zone": "ZN-WAIT"
+  },
+  {
+   "id": "WAIT-RT1",
+   "type": "round_table",
+   "label": "원탁 Ø120(가정)",
+   "x": 1060,
+   "y": 890,
+   "w": 120,
+   "d": 120,
+   "h": 72,
+   "zone": "ZN-WAIT",
+   "conf": "mid"
+  },
+  {
+   "id": "WAIT-RT2",
+   "type": "round_table",
+   "label": "원탁 Ø120(가정)",
+   "x": 1310,
+   "y": 890,
+   "w": 120,
+   "d": 120,
+   "h": 72,
+   "zone": "ZN-WAIT",
+   "conf": "mid"
+  },
+  {
+   "id": "WAIT-RT3",
+   "type": "round_table",
+   "label": "원탁 Ø120(가정)",
+   "x": 1560,
+   "y": 890,
+   "w": 120,
+   "d": 120,
+   "h": 72,
+   "zone": "ZN-WAIT",
+   "conf": "mid"
+  },
+  {
+   "id": "WAIT-RT4",
+   "type": "round_table",
+   "label": "원탁 Ø120(가정)",
+   "x": 1060,
+   "y": 1140,
+   "w": 120,
+   "d": 120,
+   "h": 72,
+   "zone": "ZN-WAIT",
+   "conf": "mid"
+  },
+  {
+   "id": "WAIT-RT5",
+   "type": "round_table",
+   "label": "원탁 Ø120(가정)",
+   "x": 1310,
+   "y": 1140,
+   "w": 120,
+   "d": 120,
+   "h": 72,
+   "zone": "ZN-WAIT",
+   "conf": "mid"
+  },
+  {
+   "id": "WAIT-RT6",
+   "type": "round_table",
+   "label": "원탁 Ø120(가정)",
+   "x": 1560,
+   "y": 1140,
+   "w": 120,
+   "d": 120,
+   "h": 72,
+   "zone": "ZN-WAIT",
+   "conf": "mid"
+  },
+  {
+   "id": "WAIT-T1",
+   "type": "table",
+   "label": "테이블 150x90",
+   "x": 1140,
+   "y": 1460,
+   "w": 150,
+   "d": 90,
+   "h": 72,
+   "zone": "ZN-WAIT"
+  },
+  {
+   "id": "WAIT-T2",
+   "type": "table",
+   "label": "테이블 150x90",
+   "x": 1295,
+   "y": 1460,
+   "w": 150,
+   "d": 90,
+   "h": 72,
+   "zone": "ZN-WAIT"
+  },
+  {
+   "id": "WAIT-T3",
+   "type": "table",
+   "label": "테이블 150x90",
+   "x": 1450,
+   "y": 1460,
+   "w": 150,
+   "d": 90,
+   "h": 72,
+   "zone": "ZN-WAIT"
+  },
+  {
+   "id": "R1-1-1",
+   "type": "desk",
+   "label": "전화(태블릿)",
+   "x": 1775,
+   "y": 130,
+   "w": 120,
+   "d": 70,
+   "h": 72,
+   "room": "RM-R1",
+   "equip": [
+    "태블릿",
+    "전화"
+   ],
+   "seat_no": "R1-01"
+  },
+  {
+   "id": "R1-1-2",
+   "type": "desk",
+   "label": "전화(태블릿)",
+   "x": 1895,
+   "y": 130,
+   "w": 120,
+   "d": 70,
+   "h": 72,
+   "room": "RM-R1",
+   "equip": [
+    "태블릿",
+    "전화"
+   ],
+   "seat_no": "R1-02"
+  },
+  {
+   "id": "R1-1-3",
+   "type": "desk",
+   "label": "전화(태블릿)",
+   "x": 2015,
+   "y": 130,
+   "w": 120,
+   "d": 70,
+   "h": 72,
+   "room": "RM-R1",
+   "equip": [
+    "태블릿",
+    "전화"
+   ],
+   "seat_no": "R1-03"
+  },
+  {
+   "id": "R1-2-1",
+   "type": "desk",
+   "label": "전화(태블릿)",
+   "x": 1775,
+   "y": 200,
+   "w": 120,
+   "d": 70,
+   "h": 72,
+   "room": "RM-R1",
+   "equip": [
+    "태블릿",
+    "전화"
+   ],
+   "seat_no": "R1-04"
+  },
+  {
+   "id": "R1-2-2",
+   "type": "desk",
+   "label": "전화(태블릿)",
+   "x": 1895,
+   "y": 200,
+   "w": 120,
+   "d": 70,
+   "h": 72,
+   "room": "RM-R1",
+   "equip": [
+    "태블릿",
+    "전화"
+   ],
+   "seat_no": "R1-05"
+  },
+  {
+   "id": "R1-2-3",
+   "type": "desk",
+   "label": "전화(태블릿)",
+   "x": 2015,
+   "y": 200,
+   "w": 120,
+   "d": 70,
+   "h": 72,
+   "room": "RM-R1",
+   "equip": [
+    "태블릿",
+    "전화"
+   ],
+   "seat_no": "R1-06"
+  },
+  {
+   "id": "R2-1-1",
+   "type": "desk",
+   "label": "전화(태블릿)",
+   "x": 1775,
+   "y": 580,
+   "w": 120,
+   "d": 70,
+   "h": 72,
+   "room": "RM-R2",
+   "equip": [
+    "태블릿",
+    "전화"
+   ],
+   "seat_no": "R2-01"
+  },
+  {
+   "id": "R2-1-2",
+   "type": "desk",
+   "label": "전화(태블릿)",
+   "x": 1895,
+   "y": 580,
+   "w": 120,
+   "d": 70,
+   "h": 72,
+   "room": "RM-R2",
+   "equip": [
+    "태블릿",
+    "전화"
+   ],
+   "seat_no": "R2-02"
+  },
+  {
+   "id": "R2-1-3",
+   "type": "desk",
+   "label": "전화(태블릿)",
+   "x": 2015,
+   "y": 580,
+   "w": 120,
+   "d": 70,
+   "h": 72,
+   "room": "RM-R2",
+   "equip": [
+    "태블릿",
+    "전화"
+   ],
+   "seat_no": "R2-03"
+  },
+  {
+   "id": "R2-2-1",
+   "type": "desk",
+   "label": "전화(태블릿)",
+   "x": 1775,
+   "y": 650,
+   "w": 120,
+   "d": 70,
+   "h": 72,
+   "room": "RM-R2",
+   "equip": [
+    "태블릿",
+    "전화"
+   ],
+   "seat_no": "R2-04"
+  },
+  {
+   "id": "R2-2-2",
+   "type": "desk",
+   "label": "전화(태블릿)",
+   "x": 1895,
+   "y": 650,
+   "w": 120,
+   "d": 70,
+   "h": 72,
+   "room": "RM-R2",
+   "equip": [
+    "태블릿",
+    "전화"
+   ],
+   "seat_no": "R2-05"
+  },
+  {
+   "id": "R1-PNL1",
+   "type": "desk_panel",
+   "label": "칸막이",
+   "x": 1770,
+   "y": 115,
+   "w": 5,
+   "d": 170,
+   "h": 120,
+   "room": "RM-R1"
+  },
+  {
+   "id": "R2-PNL1",
+   "type": "desk_panel",
+   "label": "칸막이",
+   "x": 1770,
+   "y": 565,
+   "w": 5,
+   "d": 170,
+   "h": 120,
+   "room": "RM-R2"
+  },
+  {
+   "id": "R1-PNL2",
+   "type": "desk_panel",
+   "label": "칸막이",
+   "x": 1890,
+   "y": 115,
+   "w": 5,
+   "d": 170,
+   "h": 120,
+   "room": "RM-R1"
+  },
+  {
+   "id": "R2-PNL2",
+   "type": "desk_panel",
+   "label": "칸막이",
+   "x": 1890,
+   "y": 565,
+   "w": 5,
+   "d": 170,
+   "h": 120,
+   "room": "RM-R2"
+  },
+  {
+   "id": "R1-PNL3",
+   "type": "desk_panel",
+   "label": "칸막이",
+   "x": 2010,
+   "y": 115,
+   "w": 5,
+   "d": 170,
+   "h": 120,
+   "room": "RM-R1"
+  },
+  {
+   "id": "R2-PNL3",
+   "type": "desk_panel",
+   "label": "칸막이",
+   "x": 2010,
+   "y": 565,
+   "w": 5,
+   "d": 170,
+   "h": 120,
+   "room": "RM-R2"
+  },
+  {
+   "id": "R3-T1",
+   "type": "table",
+   "label": "테이블 120x60",
+   "x": 1755,
+   "y": 985,
+   "w": 120,
+   "d": 60,
+   "h": 72,
+   "room": "RM-R3"
+  },
+  {
+   "id": "R3-T2",
+   "type": "table",
+   "label": "테이블 120x60",
+   "x": 1880,
+   "y": 985,
+   "w": 120,
+   "d": 60,
+   "h": 72,
+   "room": "RM-R3"
+  },
+  {
+   "id": "R3-T3",
+   "type": "table",
+   "label": "테이블 120x60",
+   "x": 2005,
+   "y": 985,
+   "w": 120,
+   "d": 60,
+   "h": 72,
+   "room": "RM-R3"
+  },
+  {
+   "id": "R4-T1",
+   "type": "table",
+   "label": "테이블 180x80",
+   "x": 1760,
+   "y": 1165,
+   "w": 180,
+   "d": 80,
+   "h": 72,
+   "room": "RM-R4"
+  },
+  {
+   "id": "R4-T2",
+   "type": "table",
+   "label": "테이블 180x80",
+   "x": 1945,
+   "y": 1165,
+   "w": 180,
+   "d": 80,
+   "h": 72,
+   "room": "RM-R4"
+  },
+  {
+   "id": "R5-T1",
+   "type": "table",
+   "label": "테이블 240x120",
+   "x": 1830,
+   "y": 1305,
+   "w": 240,
+   "d": 120,
+   "h": 72,
+   "room": "RM-R5"
+  },
+  {
+   "id": "CH-KT-D1-W1",
+   "type": "chair",
+   "label": "의자",
+   "x": 3.0,
+   "y": 105.0,
+   "w": 60,
+   "d": 60,
+   "h": 100,
+   "face": "E",
+   "kind": "task"
+  },
+  {
+   "id": "CH-KT-D3-W1",
+   "type": "chair",
+   "label": "의자",
+   "x": 3.0,
+   "y": 225.0,
+   "w": 60,
+   "d": 60,
+   "h": 100,
+   "face": "E",
+   "kind": "task"
+  },
+  {
+   "id": "CH-KT-D2-E1",
+   "type": "chair",
+   "label": "의자",
+   "x": 187.0,
+   "y": 105.0,
+   "w": 60,
+   "d": 60,
+   "h": 100,
+   "face": "W",
+   "kind": "task"
+  },
+  {
+   "id": "CH-KT-D4-E1",
+   "type": "chair",
+   "label": "의자",
+   "x": 187.0,
+   "y": 225.0,
+   "w": 60,
+   "d": 60,
+   "h": 100,
+   "face": "W",
+   "kind": "task"
+  },
+  {
+   "id": "CH-KT-D5-W1",
+   "type": "chair",
+   "label": "의자",
+   "x": 253.0,
+   "y": 50.0,
+   "w": 60,
+   "d": 60,
+   "h": 100,
+   "face": "E",
+   "kind": "task"
+  },
+  {
+   "id": "CH-KT-D6-W1",
+   "type": "chair",
+   "label": "의자",
+   "x": 253.0,
+   "y": 170.0,
+   "w": 60,
+   "d": 60,
+   "h": 100,
+   "face": "E",
+   "kind": "task"
+  },
+  {
+   "id": "CH-KG-OP-N1",
+   "type": "chair",
+   "label": "의자",
+   "x": 130.0,
+   "y": 403.0,
+   "w": 60,
+   "d": 60,
+   "h": 100,
+   "face": "S",
+   "kind": "task"
+  },
+  {
+   "id": "CH-KG-D1-W1",
+   "type": "chair",
+   "label": "의자",
+   "x": 28.0,
+   "y": 668.0,
+   "w": 60,
+   "d": 60,
+   "h": 100,
+   "face": "E",
+   "kind": "task"
+  },
+  {
+   "id": "CH-KG-D2-E1",
+   "type": "chair",
+   "label": "의자",
+   "x": 232.0,
+   "y": 668.0,
+   "w": 60,
+   "d": 60,
+   "h": 100,
+   "face": "W",
+   "kind": "task"
+  },
+  {
+   "id": "CH-KOG-OP-N1",
+   "type": "chair",
+   "label": "의자",
+   "x": 130.0,
+   "y": 818.0,
+   "w": 60,
+   "d": 60,
+   "h": 100,
+   "face": "S",
+   "kind": "task"
+  },
+  {
+   "id": "CH-KOG-D1-W1",
+   "type": "chair",
+   "label": "의자",
+   "x": 28.0,
+   "y": 1080.0,
+   "w": 60,
+   "d": 60,
+   "h": 100,
+   "face": "E",
+   "kind": "task"
+  },
+  {
+   "id": "CH-KOG-D3-W1",
+   "type": "chair",
+   "label": "의자",
+   "x": 28.0,
+   "y": 1220.0,
+   "w": 60,
+   "d": 60,
+   "h": 100,
+   "face": "E",
+   "kind": "task"
+  },
+  {
+   "id": "CH-KOG-D2-E1",
+   "type": "chair",
+   "label": "의자",
+   "x": 232.0,
+   "y": 1080.0,
+   "w": 60,
+   "d": 60,
+   "h": 100,
+   "face": "W",
+   "kind": "task"
+  },
+  {
+   "id": "CH-KOG-D4-E1",
+   "type": "chair",
+   "label": "의자",
+   "x": 232.0,
+   "y": 1220.0,
+   "w": 60,
+   "d": 60,
+   "h": 100,
+   "face": "W",
+   "kind": "task"
+  },
+  {
+   "id": "CH-LOB-MG1-W1",
+   "type": "chair",
+   "label": "의자",
+   "x": 1198.0,
+   "y": 27.5,
+   "w": 60,
+   "d": 60,
+   "h": 100,
+   "face": "E",
+   "kind": "task"
+  },
+  {
+   "id": "CH-LOB-MG2-W1",
+   "type": "chair",
+   "label": "의자",
+   "x": 1198.0,
+   "y": 122.5,
+   "w": 60,
+   "d": 60,
+   "h": 100,
+   "face": "E",
+   "kind": "task"
+  },
+  {
+   "id": "CH-KOT-C1R1-1-N1",
+   "type": "chair",
+   "label": "의자",
+   "x": 405.0,
+   "y": 678.0,
+   "w": 60,
+   "d": 60,
+   "h": 100,
+   "face": "S",
+   "kind": "task"
+  },
+  {
+   "id": "CH-KOT-C1R1-2-N1",
+   "type": "chair",
+   "label": "의자",
+   "x": 505.0,
+   "y": 678.0,
+   "w": 60,
+   "d": 60,
+   "h": 100,
+   "face": "S",
+   "kind": "task"
+  },
+  {
+   "id": "CH-KOT-C1R1-3-N1",
+   "type": "chair",
+   "label": "의자",
+   "x": 605.0,
+   "y": 678.0,
+   "w": 60,
+   "d": 60,
+   "h": 100,
+   "face": "S",
+   "kind": "task"
+  },
+  {
+   "id": "CH-KOT-C1R1-4-N1",
+   "type": "chair",
+   "label": "의자",
+   "x": 705.0,
+   "y": 678.0,
+   "w": 60,
+   "d": 60,
+   "h": 100,
+   "face": "S",
+   "kind": "task"
+  },
+  {
+   "id": "CH-KOT-C1R2-1-S1",
+   "type": "chair",
+   "label": "의자",
+   "x": 405.0,
+   "y": 862.0,
+   "w": 60,
+   "d": 60,
+   "h": 100,
+   "face": "N",
+   "kind": "task"
+  },
+  {
+   "id": "CH-KOT-C1R2-2-S1",
+   "type": "chair",
+   "label": "의자",
+   "x": 505.0,
+   "y": 862.0,
+   "w": 60,
+   "d": 60,
+   "h": 100,
+   "face": "N",
+   "kind": "task"
+  },
+  {
+   "id": "CH-KOT-C1R2-3-S1",
+   "type": "chair",
+   "label": "의자",
+   "x": 605.0,
+   "y": 862.0,
+   "w": 60,
+   "d": 60,
+   "h": 100,
+   "face": "N",
+   "kind": "task"
+  },
+  {
+   "id": "CH-KOT-C1R2-4-S1",
+   "type": "chair",
+   "label": "의자",
+   "x": 705.0,
+   "y": 862.0,
+   "w": 60,
+   "d": 60,
+   "h": 100,
+   "face": "N",
+   "kind": "task"
+  },
+  {
+   "id": "CH-KOT-C2R1-1-N1",
+   "type": "chair",
+   "label": "의자",
+   "x": 405.0,
+   "y": 978.0,
+   "w": 60,
+   "d": 60,
+   "h": 100,
+   "face": "S",
+   "kind": "task"
+  },
+  {
+   "id": "CH-KOT-C2R1-2-N1",
+   "type": "chair",
+   "label": "의자",
+   "x": 505.0,
+   "y": 978.0,
+   "w": 60,
+   "d": 60,
+   "h": 100,
+   "face": "S",
+   "kind": "task"
+  },
+  {
+   "id": "CH-KOT-C2R1-3-N1",
+   "type": "chair",
+   "label": "의자",
+   "x": 605.0,
+   "y": 978.0,
+   "w": 60,
+   "d": 60,
+   "h": 100,
+   "face": "S",
+   "kind": "task"
+  },
+  {
+   "id": "CH-KOT-C2R1-4-N1",
+   "type": "chair",
+   "label": "의자",
+   "x": 705.0,
+   "y": 978.0,
+   "w": 60,
+   "d": 60,
+   "h": 100,
+   "face": "S",
+   "kind": "task"
+  },
+  {
+   "id": "CH-KOT-C2R2-1-S1",
+   "type": "chair",
+   "label": "의자",
+   "x": 405.0,
+   "y": 1162.0,
+   "w": 60,
+   "d": 60,
+   "h": 100,
+   "face": "N",
+   "kind": "task"
+  },
+  {
+   "id": "CH-KOT-C2R2-2-S1",
+   "type": "chair",
+   "label": "의자",
+   "x": 505.0,
+   "y": 1162.0,
+   "w": 60,
+   "d": 60,
+   "h": 100,
+   "face": "N",
+   "kind": "task"
+  },
+  {
+   "id": "CH-KOT-C2R2-3-S1",
+   "type": "chair",
+   "label": "의자",
+   "x": 605.0,
+   "y": 1162.0,
+   "w": 60,
+   "d": 60,
+   "h": 100,
+   "face": "N",
+   "kind": "task"
+  },
+  {
+   "id": "CH-KOT-C2R2-4-S1",
+   "type": "chair",
+   "label": "의자",
+   "x": 705.0,
+   "y": 1162.0,
+   "w": 60,
+   "d": 60,
+   "h": 100,
+   "face": "N",
+   "kind": "task"
+  },
+  {
+   "id": "CH-KOT-C3R1-1-N1",
+   "type": "chair",
+   "label": "의자",
+   "x": 405.0,
+   "y": 1278.0,
+   "w": 60,
+   "d": 60,
+   "h": 100,
+   "face": "S",
+   "kind": "task"
+  },
+  {
+   "id": "CH-KOT-C3R1-2-N1",
+   "type": "chair",
+   "label": "의자",
+   "x": 505.0,
+   "y": 1278.0,
+   "w": 60,
+   "d": 60,
+   "h": 100,
+   "face": "S",
+   "kind": "task"
+  },
+  {
+   "id": "CH-KOT-C3R1-3-N1",
+   "type": "chair",
+   "label": "의자",
+   "x": 605.0,
+   "y": 1278.0,
+   "w": 60,
+   "d": 60,
+   "h": 100,
+   "face": "S",
+   "kind": "task"
+  },
+  {
+   "id": "CH-KOT-C3R1-4-N1",
+   "type": "chair",
+   "label": "의자",
+   "x": 705.0,
+   "y": 1278.0,
+   "w": 60,
+   "d": 60,
+   "h": 100,
+   "face": "S",
+   "kind": "task"
+  },
+  {
+   "id": "CH-KOT-C3R2-1-S1",
+   "type": "chair",
+   "label": "의자",
+   "x": 405.0,
+   "y": 1462.0,
+   "w": 60,
+   "d": 60,
+   "h": 100,
+   "face": "N",
+   "kind": "task"
+  },
+  {
+   "id": "CH-KOT-C3R2-2-S1",
+   "type": "chair",
+   "label": "의자",
+   "x": 505.0,
+   "y": 1462.0,
+   "w": 60,
+   "d": 60,
+   "h": 100,
+   "face": "N",
+   "kind": "task"
+  },
+  {
+   "id": "CH-KOT-C3R2-3-S1",
+   "type": "chair",
+   "label": "의자",
+   "x": 605.0,
+   "y": 1462.0,
+   "w": 60,
+   "d": 60,
+   "h": 100,
+   "face": "N",
+   "kind": "task"
+  },
+  {
+   "id": "CH-KOT-C3R2-4-S1",
+   "type": "chair",
+   "label": "의자",
+   "x": 705.0,
+   "y": 1462.0,
+   "w": 60,
+   "d": 60,
+   "h": 100,
+   "face": "N",
+   "kind": "task"
+  },
+  {
+   "id": "CH-R1-1-1-N1",
+   "type": "chair",
+   "label": "의자",
+   "x": 1805.0,
+   "y": 68.0,
+   "w": 60,
+   "d": 60,
+   "h": 100,
+   "face": "S",
+   "kind": "task"
+  },
+  {
+   "id": "CH-R1-1-2-N1",
+   "type": "chair",
+   "label": "의자",
+   "x": 1925.0,
+   "y": 68.0,
+   "w": 60,
+   "d": 60,
+   "h": 100,
+   "face": "S",
+   "kind": "task"
+  },
+  {
+   "id": "CH-R1-1-3-N1",
+   "type": "chair",
+   "label": "의자",
+   "x": 2045.0,
+   "y": 68.0,
+   "w": 60,
+   "d": 60,
+   "h": 100,
+   "face": "S",
+   "kind": "task"
+  },
+  {
+   "id": "CH-R1-2-1-S1",
+   "type": "chair",
+   "label": "의자",
+   "x": 1805.0,
+   "y": 272.0,
+   "w": 60,
+   "d": 60,
+   "h": 100,
+   "face": "N",
+   "kind": "task"
+  },
+  {
+   "id": "CH-R1-2-2-S1",
+   "type": "chair",
+   "label": "의자",
+   "x": 1925.0,
+   "y": 272.0,
+   "w": 60,
+   "d": 60,
+   "h": 100,
+   "face": "N",
+   "kind": "task"
+  },
+  {
+   "id": "CH-R1-2-3-S1",
+   "type": "chair",
+   "label": "의자",
+   "x": 2045.0,
+   "y": 272.0,
+   "w": 60,
+   "d": 60,
+   "h": 100,
+   "face": "N",
+   "kind": "task"
+  },
+  {
+   "id": "CH-R2-1-1-N1",
+   "type": "chair",
+   "label": "의자",
+   "x": 1805.0,
+   "y": 518.0,
+   "w": 60,
+   "d": 60,
+   "h": 100,
+   "face": "S",
+   "kind": "task"
+  },
+  {
+   "id": "CH-R2-1-2-N1",
+   "type": "chair",
+   "label": "의자",
+   "x": 1925.0,
+   "y": 518.0,
+   "w": 60,
+   "d": 60,
+   "h": 100,
+   "face": "S",
+   "kind": "task"
+  },
+  {
+   "id": "CH-R2-1-3-N1",
+   "type": "chair",
+   "label": "의자",
+   "x": 2045.0,
+   "y": 518.0,
+   "w": 60,
+   "d": 60,
+   "h": 100,
+   "face": "S",
+   "kind": "task"
+  },
+  {
+   "id": "CH-R2-2-1-S1",
+   "type": "chair",
+   "label": "의자",
+   "x": 1805.0,
+   "y": 722.0,
+   "w": 60,
+   "d": 60,
+   "h": 100,
+   "face": "N",
+   "kind": "task"
+  },
+  {
+   "id": "CH-R2-2-2-S1",
+   "type": "chair",
+   "label": "의자",
+   "x": 1925.0,
+   "y": 722.0,
+   "w": 60,
+   "d": 60,
+   "h": 100,
+   "face": "N",
+   "kind": "task"
+  },
+  {
+   "id": "CH-R3-T1-N1",
+   "type": "chair",
+   "label": "의자",
+   "x": 1790.0,
+   "y": 928.0,
+   "w": 50,
+   "d": 50,
+   "h": 85,
+   "face": "S",
+   "kind": "meeting"
+  },
+  {
+   "id": "CH-R3-T2-N1",
+   "type": "chair",
+   "label": "의자",
+   "x": 1915.0,
+   "y": 928.0,
+   "w": 50,
+   "d": 50,
+   "h": 85,
+   "face": "S",
+   "kind": "meeting"
+  },
+  {
+   "id": "CH-R3-T3-N1",
+   "type": "chair",
+   "label": "의자",
+   "x": 2040.0,
+   "y": 928.0,
+   "w": 50,
+   "d": 50,
+   "h": 85,
+   "face": "S",
+   "kind": "meeting"
+  },
+  {
+   "id": "CH-R4-T1-N1",
+   "type": "chair",
+   "label": "의자",
+   "x": 1795.0,
+   "y": 1108.0,
+   "w": 50,
+   "d": 50,
+   "h": 85,
+   "face": "S",
+   "kind": "meeting"
+  },
+  {
+   "id": "CH-R4-T1-N2",
+   "type": "chair",
+   "label": "의자",
+   "x": 1855.0,
+   "y": 1108.0,
+   "w": 50,
+   "d": 50,
+   "h": 85,
+   "face": "S",
+   "kind": "meeting"
+  },
+  {
+   "id": "CH-R4-T2-N1",
+   "type": "chair",
+   "label": "의자",
+   "x": 1980.0,
+   "y": 1108.0,
+   "w": 50,
+   "d": 50,
+   "h": 85,
+   "face": "S",
+   "kind": "meeting"
+  },
+  {
+   "id": "CH-R4-T2-N2",
+   "type": "chair",
+   "label": "의자",
+   "x": 2040.0,
+   "y": 1108.0,
+   "w": 50,
+   "d": 50,
+   "h": 85,
+   "face": "S",
+   "kind": "meeting"
+  },
+  {
+   "id": "CH-R5-T1-N1",
+   "type": "chair",
+   "label": "의자",
+   "x": 1865.0,
+   "y": 1248.0,
+   "w": 50,
+   "d": 50,
+   "h": 85,
+   "face": "S",
+   "kind": "meeting"
+  },
+  {
+   "id": "CH-R5-T1-N2",
+   "type": "chair",
+   "label": "의자",
+   "x": 1925.0,
+   "y": 1248.0,
+   "w": 50,
+   "d": 50,
+   "h": 85,
+   "face": "S",
+   "kind": "meeting"
+  },
+  {
+   "id": "CH-R5-T1-N3",
+   "type": "chair",
+   "label": "의자",
+   "x": 1985.0,
+   "y": 1248.0,
+   "w": 50,
+   "d": 50,
+   "h": 85,
+   "face": "S",
+   "kind": "meeting"
+  },
+  {
+   "id": "CH-R5-T1-S1",
+   "type": "chair",
+   "label": "의자",
+   "x": 1865.0,
+   "y": 1432.0,
+   "w": 50,
+   "d": 50,
+   "h": 85,
+   "face": "N",
+   "kind": "meeting"
+  },
+  {
+   "id": "CH-R5-T1-S2",
+   "type": "chair",
+   "label": "의자",
+   "x": 1925.0,
+   "y": 1432.0,
+   "w": 50,
+   "d": 50,
+   "h": 85,
+   "face": "N",
+   "kind": "meeting"
+  },
+  {
+   "id": "CH-R5-T1-S3",
+   "type": "chair",
+   "label": "의자",
+   "x": 1985.0,
+   "y": 1432.0,
+   "w": 50,
+   "d": 50,
+   "h": 85,
+   "face": "N",
+   "kind": "meeting"
+  },
+  {
+   "id": "CH-WAIT-T1-N1",
+   "type": "chair",
+   "label": "의자",
+   "x": 1165.0,
+   "y": 1403.0,
+   "w": 50,
+   "d": 50,
+   "h": 85,
+   "face": "S",
+   "kind": "meeting"
+  },
+  {
+   "id": "CH-WAIT-T1-N2",
+   "type": "chair",
+   "label": "의자",
+   "x": 1215.0,
+   "y": 1403.0,
+   "w": 50,
+   "d": 50,
+   "h": 85,
+   "face": "S",
+   "kind": "meeting"
+  },
+  {
+   "id": "CH-WAIT-T2-N1",
+   "type": "chair",
+   "label": "의자",
+   "x": 1320.0,
+   "y": 1403.0,
+   "w": 50,
+   "d": 50,
+   "h": 85,
+   "face": "S",
+   "kind": "meeting"
+  },
+  {
+   "id": "CH-WAIT-T2-N2",
+   "type": "chair",
+   "label": "의자",
+   "x": 1370.0,
+   "y": 1403.0,
+   "w": 50,
+   "d": 50,
+   "h": 85,
+   "face": "S",
+   "kind": "meeting"
+  },
+  {
+   "id": "CH-WAIT-T3-N1",
+   "type": "chair",
+   "label": "의자",
+   "x": 1475.0,
+   "y": 1403.0,
+   "w": 50,
+   "d": 50,
+   "h": 85,
+   "face": "S",
+   "kind": "meeting"
+  },
+  {
+   "id": "CH-WAIT-T3-N2",
+   "type": "chair",
+   "label": "의자",
+   "x": 1525.0,
+   "y": 1403.0,
+   "w": 50,
+   "d": 50,
+   "h": 85,
+   "face": "S",
+   "kind": "meeting"
+  },
+  {
+   "id": "CH-PAN-T1-S1",
+   "type": "chair",
+   "label": "의자",
+   "x": 450.0,
+   "y": 72.0,
+   "w": 50,
+   "d": 50,
+   "h": 85,
+   "face": "N",
+   "kind": "meeting"
+  },
+  {
+   "id": "CH-NIC-T1-S1",
+   "type": "chair",
+   "label": "의자",
+   "x": 945.0,
+   "y": -78.0,
+   "w": 50,
+   "d": 50,
+   "h": 85,
+   "face": "N",
+   "kind": "meeting"
+  },
+  {
+   "id": "CH-NIC-T1-S2",
+   "type": "chair",
+   "label": "의자",
+   "x": 995.0,
+   "y": -78.0,
+   "w": 50,
+   "d": 50,
+   "h": 85,
+   "face": "N",
+   "kind": "meeting"
+  },
+  {
+   "id": "CH-PAN-RT1-W1",
+   "type": "chair",
+   "label": "의자",
+   "x": 462.0,
+   "y": 125.0,
+   "w": 50,
+   "d": 50,
+   "h": 85,
+   "face": "E",
+   "kind": "meeting"
+  },
+  {
+   "id": "CH-PAN-RT1-E1",
+   "type": "chair",
+   "label": "의자",
+   "x": 598.0,
+   "y": 125.0,
+   "w": 50,
+   "d": 50,
+   "h": 85,
+   "face": "W",
+   "kind": "meeting"
+  },
+  {
+   "id": "CH-PAN-RT2-W1",
+   "type": "chair",
+   "label": "의자",
+   "x": 462.0,
+   "y": 245.0,
+   "w": 50,
+   "d": 50,
+   "h": 85,
+   "face": "E",
+   "kind": "meeting"
+  },
+  {
+   "id": "CH-PAN-RT2-E1",
+   "type": "chair",
+   "label": "의자",
+   "x": 598.0,
+   "y": 245.0,
+   "w": 50,
+   "d": 50,
+   "h": 85,
+   "face": "W",
+   "kind": "meeting"
+  },
+  {
+   "id": "CH-WAIT-RT1-N1",
+   "type": "chair",
+   "label": "의자",
+   "x": 1095.0,
+   "y": 843.0,
+   "w": 50,
+   "d": 50,
+   "h": 85,
+   "face": "S",
+   "kind": "meeting"
+  },
+  {
+   "id": "CH-WAIT-RT1-S1",
+   "type": "chair",
+   "label": "의자",
+   "x": 1095.0,
+   "y": 1007.0,
+   "w": 50,
+   "d": 50,
+   "h": 85,
+   "face": "N",
+   "kind": "meeting"
+  },
+  {
+   "id": "CH-WAIT-RT1-E1",
+   "type": "chair",
+   "label": "의자",
+   "x": 1177.0,
+   "y": 925.0,
+   "w": 50,
+   "d": 50,
+   "h": 85,
+   "face": "W",
+   "kind": "meeting"
+  },
+  {
+   "id": "CH-WAIT-RT1-W1",
+   "type": "chair",
+   "label": "의자",
+   "x": 1013.0,
+   "y": 925.0,
+   "w": 50,
+   "d": 50,
+   "h": 85,
+   "face": "E",
+   "kind": "meeting"
+  },
+  {
+   "id": "CH-WAIT-RT2-N1",
+   "type": "chair",
+   "label": "의자",
+   "x": 1345.0,
+   "y": 843.0,
+   "w": 50,
+   "d": 50,
+   "h": 85,
+   "face": "S",
+   "kind": "meeting"
+  },
+  {
+   "id": "CH-WAIT-RT2-S1",
+   "type": "chair",
+   "label": "의자",
+   "x": 1345.0,
+   "y": 1007.0,
+   "w": 50,
+   "d": 50,
+   "h": 85,
+   "face": "N",
+   "kind": "meeting"
+  },
+  {
+   "id": "CH-WAIT-RT2-E1",
+   "type": "chair",
+   "label": "의자",
+   "x": 1427.0,
+   "y": 925.0,
+   "w": 50,
+   "d": 50,
+   "h": 85,
+   "face": "W",
+   "kind": "meeting"
+  },
+  {
+   "id": "CH-WAIT-RT2-W1",
+   "type": "chair",
+   "label": "의자",
+   "x": 1263.0,
+   "y": 925.0,
+   "w": 50,
+   "d": 50,
+   "h": 85,
+   "face": "E",
+   "kind": "meeting"
+  },
+  {
+   "id": "CH-WAIT-RT3-N1",
+   "type": "chair",
+   "label": "의자",
+   "x": 1595.0,
+   "y": 843.0,
+   "w": 50,
+   "d": 50,
+   "h": 85,
+   "face": "S",
+   "kind": "meeting"
+  },
+  {
+   "id": "CH-WAIT-RT3-S1",
+   "type": "chair",
+   "label": "의자",
+   "x": 1595.0,
+   "y": 1007.0,
+   "w": 50,
+   "d": 50,
+   "h": 85,
+   "face": "N",
+   "kind": "meeting"
+  },
+  {
+   "id": "CH-WAIT-RT3-E1",
+   "type": "chair",
+   "label": "의자",
+   "x": 1677.0,
+   "y": 925.0,
+   "w": 50,
+   "d": 50,
+   "h": 85,
+   "face": "W",
+   "kind": "meeting"
+  },
+  {
+   "id": "CH-WAIT-RT3-W1",
+   "type": "chair",
+   "label": "의자",
+   "x": 1513.0,
+   "y": 925.0,
+   "w": 50,
+   "d": 50,
+   "h": 85,
+   "face": "E",
+   "kind": "meeting"
+  },
+  {
+   "id": "CH-WAIT-RT4-N1",
+   "type": "chair",
+   "label": "의자",
+   "x": 1095.0,
+   "y": 1093.0,
+   "w": 50,
+   "d": 50,
+   "h": 85,
+   "face": "S",
+   "kind": "meeting"
+  },
+  {
+   "id": "CH-WAIT-RT4-S1",
+   "type": "chair",
+   "label": "의자",
+   "x": 1095.0,
+   "y": 1257.0,
+   "w": 50,
+   "d": 50,
+   "h": 85,
+   "face": "N",
+   "kind": "meeting"
+  },
+  {
+   "id": "CH-WAIT-RT4-E1",
+   "type": "chair",
+   "label": "의자",
+   "x": 1177.0,
+   "y": 1175.0,
+   "w": 50,
+   "d": 50,
+   "h": 85,
+   "face": "W",
+   "kind": "meeting"
+  },
+  {
+   "id": "CH-WAIT-RT4-W1",
+   "type": "chair",
+   "label": "의자",
+   "x": 1013.0,
+   "y": 1175.0,
+   "w": 50,
+   "d": 50,
+   "h": 85,
+   "face": "E",
+   "kind": "meeting"
+  },
+  {
+   "id": "CH-WAIT-RT5-N1",
+   "type": "chair",
+   "label": "의자",
+   "x": 1345.0,
+   "y": 1093.0,
+   "w": 50,
+   "d": 50,
+   "h": 85,
+   "face": "S",
+   "kind": "meeting"
+  },
+  {
+   "id": "CH-WAIT-RT5-S1",
+   "type": "chair",
+   "label": "의자",
+   "x": 1345.0,
+   "y": 1257.0,
+   "w": 50,
+   "d": 50,
+   "h": 85,
+   "face": "N",
+   "kind": "meeting"
+  },
+  {
+   "id": "CH-WAIT-RT5-E1",
+   "type": "chair",
+   "label": "의자",
+   "x": 1427.0,
+   "y": 1175.0,
+   "w": 50,
+   "d": 50,
+   "h": 85,
+   "face": "W",
+   "kind": "meeting"
+  },
+  {
+   "id": "CH-WAIT-RT5-W1",
+   "type": "chair",
+   "label": "의자",
+   "x": 1263.0,
+   "y": 1175.0,
+   "w": 50,
+   "d": 50,
+   "h": 85,
+   "face": "E",
+   "kind": "meeting"
+  },
+  {
+   "id": "CH-WAIT-RT6-N1",
+   "type": "chair",
+   "label": "의자",
+   "x": 1595.0,
+   "y": 1093.0,
+   "w": 50,
+   "d": 50,
+   "h": 85,
+   "face": "S",
+   "kind": "meeting"
+  },
+  {
+   "id": "CH-WAIT-RT6-S1",
+   "type": "chair",
+   "label": "의자",
+   "x": 1595.0,
+   "y": 1257.0,
+   "w": 50,
+   "d": 50,
+   "h": 85,
+   "face": "N",
+   "kind": "meeting"
+  },
+  {
+   "id": "CH-WAIT-RT6-E1",
+   "type": "chair",
+   "label": "의자",
+   "x": 1677.0,
+   "y": 1175.0,
+   "w": 50,
+   "d": 50,
+   "h": 85,
+   "face": "W",
+   "kind": "meeting"
+  },
+  {
+   "id": "CH-WAIT-RT6-W1",
+   "type": "chair",
+   "label": "의자",
+   "x": 1513.0,
+   "y": 1175.0,
+   "w": 50,
+   "d": 50,
+   "h": 85,
+   "face": "E",
+   "kind": "meeting"
+  }
+ ],
+ "annotations": [
+  {
+   "kind": "handwriting",
+   "text": "현아",
+   "near": "KOT-C2R1-2 위",
+   "conf": "low"
+  },
+  {
+   "kind": "handwriting",
+   "text": "다솔(?)",
+   "near": "KOT-C2R1-3 위",
+   "conf": "low"
+  },
+  {
+   "kind": "handwriting",
+   "text": "○경(?)",
+   "near": "KOT-C2R2-2 아래",
+   "conf": "low"
+  },
+  {
+   "kind": "handwriting",
+   "text": "은영",
+   "near": "KOT-C2R2-3 아래",
+   "conf": "low"
+  },
+  {
+   "kind": "handwriting",
+   "text": "민경",
+   "near": "KOT-C3R1-2 위",
+   "conf": "low"
+  },
+  {
+   "kind": "handwriting",
+   "text": "인숙",
+   "near": "KOT-C3R1-3 위",
+   "conf": "low"
+  },
+  {
+   "kind": "handwriting",
+   "text": "경희",
+   "near": "KOT-C3R2-2 아래",
+   "conf": "low"
+  },
+  {
+   "kind": "handwriting",
+   "text": "원석(?)",
+   "near": "KOT-C3R2-4 아래",
+   "conf": "low"
+  },
+  {
+   "kind": "tape",
+   "text": "흰 테이프로 가려진 이름",
+   "near": "각 클러스터 1열 위/아래",
+   "conf": "high"
+  }
+ ]
+}
