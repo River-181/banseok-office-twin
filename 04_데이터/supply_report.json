@@ -1,0 +1,76 @@
+{
+ "stock": {
+  "맥심 모카골드": {
+   "daily": 61.2,
+   "stock": 300,
+   "unit": "스틱",
+   "days_left": 4.9,
+   "monthly_packs": 13
+  },
+  "둥글레차": {
+   "daily": 20.4,
+   "stock": 200,
+   "unit": "티백",
+   "days_left": 9.8,
+   "monthly_packs": 5
+  },
+  "종이컵": {
+   "daily": 102.0,
+   "stock": 1000,
+   "unit": "개",
+   "days_left": 9.8,
+   "monthly_packs": 3
+  },
+  "생수 500ml": {
+   "daily": 30.6,
+   "stock": 160,
+   "unit": "병",
+   "days_left": 5.2,
+   "monthly_packs": 17
+  },
+  "A4 용지": {
+   "daily": 408.0,
+   "stock": 5000,
+   "unit": "장",
+   "days_left": 12.3,
+   "monthly_packs": 4
+  }
+ },
+ "parking": {
+  "0분": {
+   "per_trip_min": 4,
+   "per_team_day_min": 16,
+   "all_teams_day_min": 32,
+   "lost_visits_per_day": 0.15,
+   "monthly_hours": 11.2
+  },
+  "3분": {
+   "per_trip_min": 10,
+   "per_team_day_min": 40,
+   "all_teams_day_min": 80,
+   "lost_visits_per_day": 0.36,
+   "monthly_hours": 28.0
+  },
+  "5분": {
+   "per_trip_min": 14,
+   "per_team_day_min": 56,
+   "all_teams_day_min": 112,
+   "lost_visits_per_day": 0.51,
+   "monthly_hours": 39.2
+  },
+  "8분": {
+   "per_trip_min": 20,
+   "per_team_day_min": 80,
+   "all_teams_day_min": 160,
+   "lost_visits_per_day": 0.73,
+   "monthly_hours": 56.0
+  },
+  "12분": {
+   "per_trip_min": 28,
+   "per_team_day_min": 112,
+   "all_teams_day_min": 224,
+   "lost_visits_per_day": 1.02,
+   "monthly_hours": 78.4
+  }
+ }
+}
