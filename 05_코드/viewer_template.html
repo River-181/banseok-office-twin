@@ -36,6 +36,12 @@ button[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);
 #clock{font-variant-numeric:tabular-nums;font-weight:600;min-width:58px}
 #stat{color:var(--muted);font-size:.78rem;flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 #seek{flex:1;accent-color:var(--accent);height:26px}
+#queue{top:calc(12px + env(safe-area-inset-top,0px));right:12px;padding:10px 12px;width:190px;display:none}
+#queue h2{margin:0 0 6px;font-size:.78rem;font-weight:600}
+#queue .q{display:flex;justify-content:space-between;font-size:.76rem;padding:3px 0;border-top:1px solid var(--line)}
+#queue .q b{font-variant-numeric:tabular-nums}
+.bub{font-size:.68rem;color:#fff;background:rgba(31,40,48,.88);border-radius:10px;padding:2px 7px;white-space:nowrap;pointer-events:none}
+.tok{width:9px;height:9px;border-radius:50%;box-shadow:0 0 0 1.5px rgba(0,0,0,.25)}
 #compass{top:calc(12px + env(safe-area-inset-top,0px));right:12px;padding:8px 10px;font-size:.75rem;color:var(--muted)}
 @media (max-width:720px){
   #head{left:8px;right:8px;max-width:none;padding:10px 12px;top:calc(8px + env(safe-area-inset-top,0px))}
@@ -45,6 +51,7 @@ button[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);
   #views,.seatmode{gap:8px;margin-top:8px}
   button{font-size:.85rem;padding:9px 13px}
   #compass{display:none}
+  #queue{top:auto;bottom:calc(120px + env(safe-area-inset-bottom,0px));right:8px;width:150px;padding:8px 10px}
   .room{font-size:.68rem}.seat{font-size:.62rem}
   #info{left:8px;right:8px;bottom:calc(92px + env(safe-area-inset-bottom,0px));padding:14px 16px 16px}
   #play{left:8px;right:8px;padding:10px 12px}
@@ -77,6 +84,8 @@ button[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);
     <button id="notes" aria-pressed="false">설명</button>
     <button id="tour">가이드 ◀▶</button>
     <button id="noise" aria-pressed="false">소음맵</button>
+    <button id="zonecol" aria-pressed="false">존 색</button>
+    <button id="hud" aria-pressed="false">업무 큐</button>
   </div>
   <div class="seatmode">
     <button data-seat="seat" aria-pressed="true">좌석번호</button>
@@ -84,6 +93,14 @@ button[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);
     <button data-seat="name">이름</button>
     <button data-seat="off">끔</button>
   </div>
+</div>
+<div id="queue" class="card"><h2>업무 큐</h2>
+  <div class="q"><span>통화 중</span><b id="q-call">0</b></div>
+  <div class="q"><span>기록 정리</span><b id="q-rec">0</b></div>
+  <div class="q"><span>콜백 약속</span><b id="q-cb">0</b></div>
+  <div class="q"><span>방문 의뢰</span><b id="q-visit">0</b></div>
+  <div class="q"><span>처리 누계</span><b id="q-done">0</b></div>
+  <div class="q"><span>방문팀</span><b id="q-team">대기</b></div>
 </div>
 <div id="compass" class="card">도면 위쪽 = 북동(코어)</div>
 <div id="play" class="card">
@@ -295,6 +312,93 @@ document.getElementById("noise").onclick = e => {
   if (noisePlane.visible && z) document.getElementById("stat").textContent = `소음맵 · 전화 구역 평균 ${z.mean} dB, 최대 ${z.max} dB (통화 35% 가정)`;
 };
 
+// ---------- P1 zone islands / P2 seat tokens / P5 queue / P8 status colours ----------
+const ZONE_COLOR = { "RM-KT": 0x3f7f86, "ZN-KOT": 0x4a76a8, "ZN-KG": 0x2f8f6b, "ZN-KOG": 0x6b9b3a,
+  "ZN-WAIT": 0xc08a3e, "ZN-LOBBY": 0xa4633f, "RM-PANTRY": 0x8a6fa8, "RM-R1": 0x4a76a8, "RM-R2": 0x4a76a8 };
+const STATUS = ["#9aa7b1", "#c0392b", "#d38b1e", "#3f7f86", "#6b7580"];   // 대기 통화 기록 휴식 자리비움
+const zoneMeshes = (REPLAY.zones || []).map(z => {
+  const color = ZONE_COLOR[z.id];
+  if (!color) return null;
+  const shape = new THREE.Shape(z.poly.map(([x, zz]) => new THREE.Vector2(x, zz)));
+  const mesh = new THREE.Mesh(new THREE.ShapeGeometry(shape), new THREE.MeshBasicMaterial({ color, transparent: true, opacity: 0.22, depthWrite: false }));
+  mesh.rotation.x = Math.PI / 2; mesh.position.y = FLOOR_Y + 0.015;
+  mesh.visible = false; scene.add(mesh); return mesh;
+}).filter(Boolean);
+document.getElementById("zonecol").onclick = e => {
+  const on = e.currentTarget.getAttribute("aria-pressed") !== "true";
+  e.currentTarget.setAttribute("aria-pressed", on); zoneMeshes.forEach(m => m.visible = on);
+};
+const tokens = new Map();
+Object.entries(REPLAY.seat_pos || {}).forEach(([seat, p]) => {
+  const el = document.createElement("div"); el.className = "tok"; el.style.background = STATUS[0];
+  const o = new CSS2DObject(el); o.position.set(p[0], FLOOR_Y + 1.55, p[1]); o.visible = false; scene.add(o);
+  tokens.set(seat, o);
+});
+const actAt = (line, t) => { let v = 0; for (const [tt, code] of line) { if (tt <= t) v = code; else break; } return v; };
+// P3: floating one-liners for events happening right now
+const bubblePool = Array.from({ length: 6 }, () => {
+  const el = document.createElement("div"); el.className = "bub";
+  const o = new CSS2DObject(el); o.visible = false; scene.add(o); return o;
+});
+function showBubbles(t) {
+  const live = (REPLAY.bubbles || []).filter(b => b[0] <= t && t - b[0] < 1.5).slice(-6);
+  bubblePool.forEach((o, i) => {
+    const b = live[i];
+    if (!b || !REPLAY.seat_pos[b[1]]) { o.visible = false; return; }
+    const p = REPLAY.seat_pos[b[1]];
+    o.element.textContent = `${b[1]} ${b[2]}`;
+    o.position.set(p[0], FLOOR_Y + 1.95, p[1]);
+    o.visible = hudOn;
+  });
+}
+// P4: click a zone island to drill down
+function zoneAt(x, z) {
+  for (const zd of REPLAY.zones || []) {
+    let hit = false;
+    const pts = zd.poly;
+    for (let i = 0, j = pts.length - 1; i < pts.length; j = i++) {
+      if ((pts[i][1] > z) !== (pts[j][1] > z) && x < pts[i][0] + (z - pts[i][1]) / (pts[j][1] - pts[i][1]) * (pts[j][0] - pts[i][0])) hit = !hit;
+    }
+    if (hit) return zd;
+  }
+  return null;
+}
+function zoneReport(zd, t) {
+  const seats = Object.entries(REPLAY.seat_zone || {}).filter(([, z]) => z === zd.id).map(([s]) => s);
+  const counts = [0, 0, 0, 0, 0];
+  seats.forEach(s => counts[actAt(REPLAY.acts[s] || [[0, 0]], t)]++);
+  const tot = (REPLAY.zone_totals || {})[zd.id] || [];
+  const row = tot[Math.min(tot.length - 1, Math.floor(t / 30))] || [0, 0, 0, 0, 0];
+  document.getElementById("info-title").textContent = `${zd.name} · ${seats.length}석`;
+  document.getElementById("info-sub").textContent =
+    `통화 ${counts[1]} · 기록 ${counts[2]} · 휴식 ${counts[3]} · 비움 ${counts[4]} — 누계 통화 ${row[1]}, 처리 ${row[2]}, 콜백 ${row[3]}, 방문의뢰 ${row[4]}`;
+  panel.style.display = "block";
+}
+let hudOn = false;
+document.getElementById("hud").onclick = e => {
+  hudOn = e.currentTarget.getAttribute("aria-pressed") !== "true";
+  e.currentTarget.setAttribute("aria-pressed", hudOn);
+  document.getElementById("queue").style.display = hudOn ? "block" : "none";
+  tokens.forEach(o => o.visible = hudOn);
+  updateHud(clockT);
+};
+function updateHud(t) {
+  if (!hudOn) return;
+  let call = 0, rec = 0;
+  for (const [seat, o] of tokens) {
+    const code = actAt(REPLAY.acts[seat] || [[0, 0]], t);
+    o.element.style.background = STATUS[code];
+    if (code === 1) call++; else if (code === 2) rec++;
+  }
+  const q = REPLAY.queue[Math.min(REPLAY.queue.length - 1, Math.round(t / 5))] || [0, 0, 0, 0];
+  document.getElementById("q-call").textContent = call;
+  document.getElementById("q-rec").textContent = rec;
+  document.getElementById("q-cb").textContent = q[1];
+  document.getElementById("q-visit").textContent = q[2];
+  document.getElementById("q-done").textContent = q[3];
+  document.getElementById("q-team").textContent = REPLAY.teams.map(tm => teamStatus(tm, t).offsite ? "출동" : "사무실").join(" / ");
+}
+
 const bytes = Uint8Array.from(atob(GLB), c => c.charCodeAt(0));
 new GLTFLoader().parse(bytes.buffer, "", gltf => {
   gltf.scene.traverse(o => {
@@ -333,7 +437,11 @@ renderer.domElement.addEventListener("pointerup", e => {
   pointer.set(((e.clientX - r.left) / r.width) * 2 - 1, -((e.clientY - r.top) / r.height) * 2 + 1);
   ray.setFromCamera(pointer, camera);
   const hit = ray.intersectObjects(scene.children, true).find(h => h.object.isMesh && !h.object.material.transparent && (keyOf(h.object.name) || keyOf(h.object.parent?.name || "")));
-  select(hit ? hit.object : null);
+  if (hit) { select(hit.object); return; }
+  const floor = ray.intersectObjects(zoneMeshes.length ? zoneMeshes : [], true)[0]
+    || ray.intersectObjects(scene.children, true).find(h => h.object.name === "FLOOR");
+  const zd = floor ? zoneAt(floor.point.x, floor.point.z) : null;
+  if (zd) { select(null); zoneReport(zd, clockT); } else select(null);
 });
 
 const head = document.getElementById("head");
@@ -431,6 +539,8 @@ function applyTime(t) {
   document.getElementById("clock").textContent = `${hh}:${mm}`;
   document.getElementById("seek").value = t;
   document.getElementById("stat").textContent = `통화중 ${k[3]}명 · 처리 ${k[2]}건 · ${statuses.join(" / ")}`;
+  updateHud(t);
+  showBubbles(t);
 }
 document.getElementById("pp").onclick = e => { playing = !playing; e.currentTarget.textContent = playing ? "❙❙" : "▶︎"; };
 document.getElementById("speed").onclick = e => { speed = { 60: 180, 180: 600, 600: 60 }[speed]; e.currentTarget.textContent = "×" + speed; };

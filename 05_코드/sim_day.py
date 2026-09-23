@@ -38,8 +38,21 @@ class Day:
         target = val(p["cases_per_checker_per_day"])
         return max(0.0, productive / target - cycle)
 
-    def log(self, actor, action, where="", **extra):
-        self.events.append(dict(t=round(self.env.now, 1), actor=actor, action=action, where=where, **extra))
+    ROLE_BY_PREFIX = {"외전": "전화실태확인원", "국전": "전화실태확인원", "R1": "전화실태확인원", "R2": "전화실태확인원",
+                      "국공": "공무원", "외공": "공무원", "관리": "관리보조", "방문": "방문실태확인원"}
+
+    def log(self, actor, action, where="", zone=None, **extra):
+        role = next((v for k, v in self.ROLE_BY_PREFIX.items() if actor.startswith(k)), "기타")
+        self.events.append(dict(t=round(self.env.now, 1), actor=actor, role=role, zone=zone or where,
+                                action=action, where=where, **extra))
+
+    @staticmethod
+    def band(amount):
+        """공유 산출물에는 금액대만 남긴다 (RED 규칙)."""
+        for limit, label in ((300_000, "30만 미만"), (1_000_000, "30~100만"), (3_000_000, "100~300만"), (10_000_000, "300~1000만")):
+            if amount < limit:
+                return label
+        return "1000만 이상"
 
     def next_case(self):
         self.case_i += 1
@@ -54,16 +67,16 @@ class Day:
         p, rng = self.p["phone"], self.rng
         s = self.p["stress"]
         last_break = 0.0
-        self.log(seat_no, "출근", seat.zone)
+        self.log(seat_no, "출근", seat.zone, zone=seat.zone)
         while self.env.now < DAY_END:
             if LUNCH_START <= self.env.now < LUNCH_END:
-                self.log(seat_no, "점심", "외출")
+                self.log(seat_no, "점심", "외출", zone=seat.zone)
                 yield self.env.timeout(LUNCH_END - self.env.now)
                 self.stress[seat_no] = max(0, self.stress.get(seat_no, 0) - s["recovery_lunch"])
                 last_break = self.env.now
                 continue
             if self.env.now - last_break >= val(self.p["workday"]["break_every_min"]):
-                self.log(seat_no, "휴식", "탕비실")
+                self.log(seat_no, "휴식", "탕비실", zone="RM-PANTRY")
                 yield self.env.timeout(val(self.p["workday"]["break_min"]))
                 self.stress[seat_no] = max(0, self.stress.get(seat_no, 0) - s["recovery_per_break_min"] * val(self.p["workday"]["break_min"]))
                 last_break = self.env.now
@@ -75,29 +88,30 @@ class Day:
                 talk = max(0.8, rng.gauss(p["talk_min"]["mean"], p["talk_min"]["sd"]))
                 hostile = rng.random() < s["hostile_call_rate"]
                 self.kpi["connects"] += 1
-                self.log(seat_no, "통화", seat.zone, case=case.id, kind=case.kind, min=round(talk, 1), hostile=hostile)
+                self.log(seat_no, "통화", seat.zone, zone=seat.zone, case=case.id, kind=case.kind,
+                         band=self.band(case.amount_krw), min=round(talk, 1), hostile=hostile)
                 yield self.env.timeout(talk)
                 self.bump(seat_no, s["per_hostile_call"] if hostile else s["per_call"])
                 if rng.random() < val(p["callback_request_rate"]):
                     self.kpi["callbacks"] += 1
-                    self.log(seat_no, "콜백약속", seat.zone, case=case.id)
+                    self.log(seat_no, "콜백약속", seat.zone, zone=seat.zone, case=case.id)
                 if rng.random() < val(p["visit_referral_rate"]):
                     self.kpi["visit_referrals"] += 1
-                    self.log(seat_no, "방문의뢰", seat.zone, case=case.id)
+                    self.log(seat_no, "방문의뢰", seat.zone, zone=seat.zone, case=case.id, band=self.band(case.amount_krw))
                 yield self.env.timeout(val(p["after_call_work_min"]))
             else:
-                self.log(seat_no, "부재", seat.zone, case=case.id)
+                self.log(seat_no, "부재", seat.zone, zone=seat.zone, case=case.id)
             self.kpi["closed"] += 1
-            self.log(seat_no, "기록정리", seat.zone, case=case.id, min=round(self.record_min, 1))
+            self.log(seat_no, "기록정리", seat.zone, zone=seat.zone, case=case.id, min=round(self.record_min, 1))
             yield self.env.timeout(self.record_min)
-        self.log(seat_no, "퇴근", seat.zone, stress=round(self.stress.get(seat_no, 0), 1))
+        self.log(seat_no, "퇴근", seat.zone, zone=seat.zone, stress=round(self.stress.get(seat_no, 0), 1))
 
     # ---------- visit team ----------
     def team(self, team, vehicle):
         p, rng, s = self.p["visit"], self.rng, self.p["stress"]
         speed = val(p["avg_speed_kmh"])
         yield self.env.timeout(30)
-        self.log(team.name, "출차", "주차장", vehicle=vehicle.id, crew=len(team.members))
+        self.log(team.name, "출차", "주차장", zone="ZN-WAIT", vehicle=vehicle.id, crew=len(team.members))
         for _ in range(val(p["visits_per_team_per_day"])):
             if self.env.now > DAY_END - 60:
                 break
@@ -105,21 +119,22 @@ class Day:
             drive = max(10, rng.gauss(p["travel_min_per_visit"]["mean"], p["travel_min_per_visit"]["sd"])) / 2
             km = drive / 60 * speed
             vehicle.drive(km); self.kpi["km"] += km
-            self.log(team.name, "이동", case.district, min=round(drive, 1), km=round(km, 1), soc=round(vehicle.soc, 2))
+            self.log(team.name, "이동", case.district, zone="현장", min=round(drive, 1), km=round(km, 1), soc=round(vehicle.soc, 2))
             yield self.env.timeout(drive)
             absent = rng.random() < val(p["absent_rate"])
             onsite = 3 if absent else max(4, rng.gauss(p["onsite_min"]["mean"], p["onsite_min"]["sd"]))
             self.kpi["visits"] += 1
             self.kpi["absent"] += absent
-            self.log(team.name, "부재확인" if absent else "실태확인", case.district, case=case.id, kind=case.kind, min=round(onsite, 1))
+            self.log(team.name, "부재확인" if absent else "실태확인", case.district, zone="현장", case=case.id,
+                     kind=case.kind, band=self.band(case.amount_krw), min=round(onsite, 1))
             yield self.env.timeout(onsite)
             for m in team.members:
                 self.bump(m, s["per_visit"])
             vehicle.drive(km); self.kpi["km"] += km
             yield self.env.timeout(drive)
-        self.log(team.name, "복귀", "주차장", vehicle=vehicle.id, soc=round(vehicle.soc, 2), odo=round(vehicle.odometer_km, 1))
+        self.log(team.name, "복귀", "주차장", zone="ZN-WAIT", vehicle=vehicle.id, soc=round(vehicle.soc, 2), odo=round(vehicle.odometer_km, 1))
         yield self.env.timeout(val(p["paperwork_min_per_visit"]) * self.kpi["visits"] / 2)
-        self.log(team.name, "서류정리", "대기공간")
+        self.log(team.name, "서류정리", "대기공간", zone="ZN-WAIT")
 
     def run(self):
         phone_seats = {n: s for n, s in self.office.seats.items() if n.startswith(("외전", "국전", "R1", "R2"))}

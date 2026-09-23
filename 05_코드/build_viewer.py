@@ -97,7 +97,66 @@ def replay_payload(model, names):
         c = next((v for v in reversed(kpi) if v[0] <= t), (0, 0, 0))
         oncall = sum(1 for a, b in calls if a <= t < b)
         sampled.append([t, c[1], c[2], oncall])
-    return dict(day=540, people=people, teams=[dict(name=n, events=teams[n]) for n in order], kpi=sampled)
+    # P2/P8: per-seat activity timeline -> status token colour (0 대기 1 통화 2 기록 3 휴식 4 자리비움)
+    acts = {}
+    for e in log["events"]:
+        seat = e["actor"]
+        if seat not in seat_chair:
+            continue
+        line = acts.setdefault(seat, [[0, 0]])
+        if e["action"] == "통화":
+            line += [[e["t"], 1], [e["t"] + e.get("min", 4), 0]]
+        elif e["action"] == "기록정리":
+            line += [[e["t"], 2], [e["t"] + e.get("min", 0), 0]]
+        elif e["action"] == "휴식":
+            line += [[e["t"], 3], [e["t"] + break_min, 0]]
+        elif e["action"] == "점심":
+            line += [[e["t"], 4], [240, 0]]
+        elif e["action"] == "퇴근":
+            line.append([e["t"], 4])
+    for line in acts.values():
+        line.sort(key=lambda p: p[0])
+    # P5: right-hand queue, sampled every 5 minutes
+    queue = []
+    running = dict(cb=0, visit=0, closed=0)
+    for e in log["events"]:
+        if e["action"] == "콜백약속":
+            running["cb"] += 1
+        elif e["action"] == "방문의뢰":
+            running["visit"] += 1
+        elif e["action"] == "기록정리":
+            running["closed"] += 1
+        queue.append((e["t"], running["cb"], running["visit"], running["closed"]))
+    q_sampled = []
+    for t in range(0, 541, 5):
+        v = next((x for x in reversed(queue) if x[0] <= t), (0, 0, 0, 0))
+        q_sampled.append([t, v[1], v[2], v[3]])
+    # P3: short bubbles for notable moments, P4: per-zone running totals
+    bubbles, zone_run, zone_series = [], {}, {}
+    TEXT = {"통화": "통화", "콜백약속": "콜백 약속", "방문의뢰": "방문 의뢰", "휴식": "휴식", "점심": "점심", "퇴근": "퇴근"}
+    for e in log["events"]:
+        if e["action"] in TEXT and e["actor"] in seat_chair:
+            extra = f" · {e.get('band', '')}" if e["action"] in ("통화", "방문의뢰") and e.get("band") else ""
+            bubbles.append([e["t"], e["actor"], TEXT[e["action"]] + extra])
+        z = e.get("zone")
+        if z:
+            run = zone_run.setdefault(z, dict(call=0, closed=0, cb=0, visit=0))
+            if e["action"] == "통화":
+                run["call"] += 1
+            elif e["action"] == "기록정리":
+                run["closed"] += 1
+            elif e["action"] == "콜백약속":
+                run["cb"] += 1
+            elif e["action"] == "방문의뢰":
+                run["visit"] += 1
+            zone_series.setdefault(z, []).append([e["t"], run["call"], run["closed"], run["cb"], run["visit"]])
+    zone_sampled = {z: [next((v for v in reversed(series) if v[0] <= t), [0, 0, 0, 0, 0]) for t in range(0, 541, 30)]
+                    for z, series in zone_series.items()}
+    zone_polys = [dict(id=z["id"], name=z["name"], poly=[[p[0] / 100, p[1] / 100] for p in z["poly"]]) for z in model["rooms"]]
+    seat_zone = {f["seat_no"]: (f.get("room") or f.get("zone")) for f in model["furniture"] if "seat_no" in f}
+    return dict(day=540, people=people, teams=[dict(name=n, events=teams[n]) for n in order], kpi=sampled,
+                acts=acts, queue=q_sampled, zones=zone_polys, seat_zone=seat_zone,
+                bubbles=bubbles, zone_totals=zone_sampled, seat_pos=seat_pos)
 
 noise_path = ROOT / "04_데이터" / "noise_map.json"
 noise = {}
