@@ -99,6 +99,12 @@ def replay_payload(model, names):
         sampled.append([t, c[1], c[2], oncall])
     return dict(day=540, people=people, teams=[dict(name=n, events=teams[n]) for n in order], kpi=sampled)
 
+noise_path = ROOT / "04_데이터" / "noise_map.json"
+noise = {}
+if noise_path.exists():
+    raw = json.loads(noise_path.read_text(encoding="utf-8"))
+    noise = dict(meta=raw["meta"], grid=raw["grid"], bare=raw["grid_no_partitions"], zones=raw["zones"])
+
 sign_path = ROOT / "04_데이터" / "signpost.json"
 signs = json.loads(sign_path.read_text(encoding="utf-8")) if sign_path.exists() else []
 replay = replay_payload(model, names)
@@ -109,6 +115,7 @@ html = (html.replace("__GLB__", base64.b64encode(glb).decode())
             .replace("__HAS_NAMES__", "true" if names else "false")
             .replace("__FLOOR_Y__", str(build_site.FLOOR3_Y))
             .replace("__CALLOUTS__", json.dumps(CALLOUTS, ensure_ascii=False))
+            .replace("__NOISE__", json.dumps(noise, ensure_ascii=False))
             .replace("__SIGNS__", json.dumps(signs, ensure_ascii=False))
             .replace("__REPLAY__", json.dumps(replay, ensure_ascii=False))
             .replace("__PARK__", json.dumps([float(v) for v in build_site.DIORAMA_ORIGIN]))

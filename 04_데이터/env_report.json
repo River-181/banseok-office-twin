@@ -1,0 +1,635 @@
+{
+ "여름 오후(8월 15시)": {
+  "sun": {
+   "altitude": 52.9,
+   "azimuth": 247.9,
+   "dni": 660,
+   "dhi": 79
+  },
+  "facades": {
+   "남서(북유성대로)": {
+    "gain_w": 7376,
+    "sunlit": true,
+    "incidence": 53.5
+   },
+   "남동(소로)": {
+    "gain_w": 492,
+    "sunlit": false,
+    "incidence": null
+   },
+   "북서(공임나라 쪽)": {
+    "gain_w": 1347,
+    "sunlit": true,
+    "incidence": 84.0
+   }
+  },
+  "outdoor": 31.0,
+  "indoor": 26.0,
+  "zones": {
+   "국세 전화실": {
+    "area": 14.1,
+    "people": 6,
+    "internal_w": 1282,
+    "solar_w": 325,
+    "envelope_w": 79,
+    "load_w": 1686,
+    "load_per_m2": 119.9,
+    "perimeter_w_m2": 127.1,
+    "core_w_m2": 91.2,
+    "mode": "냉방",
+    "ac_kw": 1.9
+   },
+   "탕비실": {
+    "area": 13.1,
+    "people": 0,
+    "internal_w": 105,
+    "solar_w": 0,
+    "envelope_w": 0,
+    "load_w": 105,
+    "load_per_m2": 8.0,
+    "perimeter_w_m2": null,
+    "core_w_m2": 8.0,
+    "mode": "냉방",
+    "ac_kw": 0.1
+   },
+   "(미상) 캐비닛실/문서고": {
+    "area": 13.1,
+    "people": 0,
+    "internal_w": 105,
+    "solar_w": 0,
+    "envelope_w": 0,
+    "load_w": 105,
+    "load_per_m2": 8.0,
+    "perimeter_w_m2": null,
+    "core_w_m2": 8.0,
+    "mode": "냉방",
+    "ac_kw": 0.1
+   },
+   "(미상) 돌출부 소실": {
+    "area": 5.4,
+    "people": 0,
+    "internal_w": 43,
+    "solar_w": 0,
+    "envelope_w": 0,
+    "load_w": 43,
+    "load_per_m2": 8.0,
+    "perimeter_w_m2": null,
+    "core_w_m2": 8.0,
+    "mode": "냉방",
+    "ac_kw": 0.0
+   },
+   "사○○실 (라벨 잘림)": {
+    "area": 22.5,
+    "people": 6,
+    "internal_w": 1350,
+    "solar_w": 142,
+    "envelope_w": 94,
+    "load_w": 1587,
+    "load_per_m2": 70.5,
+    "perimeter_w_m2": 77.5,
+    "core_w_m2": 60.0,
+    "mode": "냉방",
+    "ac_kw": 1.8
+   },
+   "전○○실 (라벨 잘림)": {
+    "area": 20.0,
+    "people": 5,
+    "internal_w": 1135,
+    "solar_w": 127,
+    "envelope_w": 84,
+    "load_w": 1345,
+    "load_per_m2": 67.3,
+    "perimeter_w_m2": 74.3,
+    "core_w_m2": 56.8,
+    "mode": "냉방",
+    "ac_kw": 1.5
+   },
+   "(미상) 소회의/작업실 A": {
+    "area": 7.8,
+    "people": 0,
+    "internal_w": 62,
+    "solar_w": 63,
+    "envelope_w": 42,
+    "load_w": 168,
+    "load_per_m2": 21.5,
+    "perimeter_w_m2": 25.5,
+    "core_w_m2": 8.0,
+    "mode": "냉방",
+    "ac_kw": 0.2
+   },
+   "(미상) 소회의/작업실 B": {
+    "area": 7.8,
+    "people": 0,
+    "internal_w": 62,
+    "solar_w": 63,
+    "envelope_w": 42,
+    "load_w": 168,
+    "load_per_m2": 21.5,
+    "perimeter_w_m2": 25.5,
+    "core_w_m2": 8.0,
+    "mode": "냉방",
+    "ac_kw": 0.2
+   },
+   "(미상) 회의실": {
+    "area": 11.9,
+    "people": 0,
+    "internal_w": 95,
+    "solar_w": 1444,
+    "envelope_w": 146,
+    "load_w": 1685,
+    "load_per_m2": 141.6,
+    "perimeter_w_m2": 141.6,
+    "core_w_m2": null,
+    "mode": "냉방",
+    "ac_kw": 1.9
+   },
+   "국세 공무원 구역": {
+    "area": 15.6,
+    "people": 3,
+    "internal_w": 710,
+    "solar_w": 355,
+    "envelope_w": 86,
+    "load_w": 1151,
+    "load_per_m2": 73.9,
+    "perimeter_w_m2": 81.4,
+    "core_w_m2": 45.5,
+    "mode": "냉방",
+    "ac_kw": 1.3
+   },
+   "국세외 공무원 구역": {
+    "area": 29.3,
+    "people": 5,
+    "internal_w": 1209,
+    "solar_w": 1980,
+    "envelope_w": 241,
+    "load_w": 3430,
+    "load_per_m2": 117.2,
+    "perimeter_w_m2": 117.2,
+    "core_w_m2": null,
+    "mode": "냉방",
+    "ac_kw": 3.9
+   },
+   "국세외 전화 구역": {
+    "area": 58.4,
+    "people": 24,
+    "internal_w": 5147,
+    "solar_w": 1710,
+    "envelope_w": 104,
+    "load_w": 6961,
+    "load_per_m2": 119.2,
+    "perimeter_w_m2": 210.3,
+    "core_w_m2": 88.1,
+    "mode": "냉방",
+    "ac_kw": 8.0
+   },
+   "방문실태확인원 대기공간": {
+    "area": 81.4,
+    "people": 0,
+    "internal_w": 651,
+    "solar_w": 2384,
+    "envelope_w": 145,
+    "load_w": 3180,
+    "load_per_m2": 39.1,
+    "perimeter_w_m2": 130.1,
+    "core_w_m2": 8.0,
+    "mode": "냉방",
+    "ac_kw": 3.7
+   },
+   "출입 로비/안내": {
+    "area": 21.0,
+    "people": 2,
+    "internal_w": 558,
+    "solar_w": 0,
+    "envelope_w": 0,
+    "load_w": 558,
+    "load_per_m2": 26.6,
+    "perimeter_w_m2": null,
+    "core_w_m2": 26.6,
+    "mode": "냉방",
+    "ac_kw": 0.6
+   }
+  }
+ },
+ "겨울 아침(1월 9시)": {
+  "sun": {
+   "altitude": 12.5,
+   "azimuth": 128.7,
+   "dni": 365,
+   "dhi": 44
+  },
+  "facades": {
+   "남서(북유성대로)": {
+    "gain_w": 375,
+    "sunlit": false,
+    "incidence": null
+   },
+   "남동(소로)": {
+    "gain_w": 4463,
+    "sunlit": true,
+    "incidence": 22.8
+   },
+   "북서(공임나라 쪽)": {
+    "gain_w": 273,
+    "sunlit": false,
+    "incidence": null
+   }
+  },
+  "outdoor": -4.0,
+  "indoor": 26.0,
+  "zones": {
+   "국세 전화실": {
+    "area": 14.1,
+    "people": 6,
+    "internal_w": 1282,
+    "solar_w": 66,
+    "envelope_w": -471,
+    "load_w": 877,
+    "load_per_m2": 62.4,
+    "perimeter_w_m2": 55.2,
+    "core_w_m2": 91.2,
+    "mode": "냉방",
+    "ac_kw": 1.0
+   },
+   "탕비실": {
+    "area": 13.1,
+    "people": 0,
+    "internal_w": 105,
+    "solar_w": 0,
+    "envelope_w": 0,
+    "load_w": 105,
+    "load_per_m2": 8.0,
+    "perimeter_w_m2": null,
+    "core_w_m2": 8.0,
+    "mode": "냉방",
+    "ac_kw": 0.1
+   },
+   "(미상) 캐비닛실/문서고": {
+    "area": 13.1,
+    "people": 0,
+    "internal_w": 105,
+    "solar_w": 0,
+    "envelope_w": 0,
+    "load_w": 105,
+    "load_per_m2": 8.0,
+    "perimeter_w_m2": null,
+    "core_w_m2": 8.0,
+    "mode": "냉방",
+    "ac_kw": 0.1
+   },
+   "(미상) 돌출부 소실": {
+    "area": 5.4,
+    "people": 0,
+    "internal_w": 43,
+    "solar_w": 0,
+    "envelope_w": 0,
+    "load_w": 43,
+    "load_per_m2": 8.0,
+    "perimeter_w_m2": null,
+    "core_w_m2": 8.0,
+    "mode": "냉방",
+    "ac_kw": 0.0
+   },
+   "사○○실 (라벨 잘림)": {
+    "area": 22.5,
+    "people": 6,
+    "internal_w": 1350,
+    "solar_w": 1292,
+    "envelope_w": -566,
+    "load_w": 2076,
+    "load_per_m2": 92.3,
+    "perimeter_w_m2": 113.8,
+    "core_w_m2": 60.0,
+    "mode": "냉방",
+    "ac_kw": 2.4
+   },
+   "전○○실 (라벨 잘림)": {
+    "area": 20.0,
+    "people": 5,
+    "internal_w": 1135,
+    "solar_w": 1148,
+    "envelope_w": -503,
+    "load_w": 1780,
+    "load_per_m2": 89.0,
+    "perimeter_w_m2": 110.5,
+    "core_w_m2": 56.8,
+    "mode": "냉방",
+    "ac_kw": 2.0
+   },
+   "(미상) 소회의/작업실 A": {
+    "area": 7.8,
+    "people": 0,
+    "internal_w": 62,
+    "solar_w": 574,
+    "envelope_w": -251,
+    "load_w": 385,
+    "load_per_m2": 49.4,
+    "perimeter_w_m2": 61.8,
+    "core_w_m2": 8.0,
+    "mode": "냉방",
+    "ac_kw": 0.4
+   },
+   "(미상) 소회의/작업실 B": {
+    "area": 7.8,
+    "people": 0,
+    "internal_w": 62,
+    "solar_w": 574,
+    "envelope_w": -251,
+    "load_w": 385,
+    "load_per_m2": 49.4,
+    "perimeter_w_m2": 61.8,
+    "core_w_m2": 8.0,
+    "mode": "냉방",
+    "ac_kw": 0.4
+   },
+   "(미상) 회의실": {
+    "area": 11.9,
+    "people": 0,
+    "internal_w": 95,
+    "solar_w": 944,
+    "envelope_w": -874,
+    "load_w": 165,
+    "load_per_m2": 13.9,
+    "perimeter_w_m2": 13.9,
+    "core_w_m2": null,
+    "mode": "냉방",
+    "ac_kw": 0.2
+   },
+   "국세 공무원 구역": {
+    "area": 15.6,
+    "people": 3,
+    "internal_w": 710,
+    "solar_w": 72,
+    "envelope_w": -515,
+    "load_w": 266,
+    "load_per_m2": 17.1,
+    "perimeter_w_m2": 9.5,
+    "core_w_m2": 45.5,
+    "mode": "냉방",
+    "ac_kw": 0.3
+   },
+   "국세외 공무원 구역": {
+    "area": 29.3,
+    "people": 5,
+    "internal_w": 1209,
+    "solar_w": 202,
+    "envelope_w": -1446,
+    "load_w": -35,
+    "load_per_m2": -1.2,
+    "perimeter_w_m2": -1.2,
+    "core_w_m2": null,
+    "mode": "난방",
+    "ac_kw": 0.0
+   },
+   "국세외 전화 구역": {
+    "area": 58.4,
+    "people": 24,
+    "internal_w": 5147,
+    "solar_w": 87,
+    "envelope_w": -622,
+    "load_w": 4612,
+    "load_per_m2": 79.0,
+    "perimeter_w_m2": 52.1,
+    "core_w_m2": 88.1,
+    "mode": "냉방",
+    "ac_kw": 5.3
+   },
+   "방문실태확인원 대기공간": {
+    "area": 81.4,
+    "people": 0,
+    "internal_w": 651,
+    "solar_w": 121,
+    "envelope_w": -867,
+    "load_w": -95,
+    "load_per_m2": -1.2,
+    "perimeter_w_m2": -28.0,
+    "core_w_m2": 8.0,
+    "mode": "난방",
+    "ac_kw": 0.1
+   },
+   "출입 로비/안내": {
+    "area": 21.0,
+    "people": 2,
+    "internal_w": 558,
+    "solar_w": 0,
+    "envelope_w": 0,
+    "load_w": 558,
+    "load_per_m2": 26.6,
+    "perimeter_w_m2": null,
+    "core_w_m2": 26.6,
+    "mode": "냉방",
+    "ac_kw": 0.6
+   }
+  }
+ },
+ "환절기(5월 14시)": {
+  "sun": {
+   "altitude": 63.1,
+   "azimuth": 235.8,
+   "dni": 680,
+   "dhi": 82
+  },
+  "facades": {
+   "남서(북유성대로)": {
+    "gain_w": 5948,
+    "sunlit": true,
+    "incidence": 63.1
+   },
+   "남동(소로)": {
+    "gain_w": 656,
+    "sunlit": false,
+    "incidence": 89.0
+   },
+   "북서(공임나라 쪽)": {
+    "gain_w": 508,
+    "sunlit": false,
+    "incidence": null
+   }
+  },
+  "outdoor": 21.0,
+  "indoor": 26.0,
+  "zones": {
+   "국세 전화실": {
+    "area": 14.1,
+    "people": 6,
+    "internal_w": 1282,
+    "solar_w": 123,
+    "envelope_w": -79,
+    "load_w": 1326,
+    "load_per_m2": 94.3,
+    "perimeter_w_m2": 95.1,
+    "core_w_m2": 91.2,
+    "mode": "냉방",
+    "ac_kw": 1.5
+   },
+   "탕비실": {
+    "area": 13.1,
+    "people": 0,
+    "internal_w": 105,
+    "solar_w": 0,
+    "envelope_w": 0,
+    "load_w": 105,
+    "load_per_m2": 8.0,
+    "perimeter_w_m2": null,
+    "core_w_m2": 8.0,
+    "mode": "냉방",
+    "ac_kw": 0.1
+   },
+   "(미상) 캐비닛실/문서고": {
+    "area": 13.1,
+    "people": 0,
+    "internal_w": 105,
+    "solar_w": 0,
+    "envelope_w": 0,
+    "load_w": 105,
+    "load_per_m2": 8.0,
+    "perimeter_w_m2": null,
+    "core_w_m2": 8.0,
+    "mode": "냉방",
+    "ac_kw": 0.1
+   },
+   "(미상) 돌출부 소실": {
+    "area": 5.4,
+    "people": 0,
+    "internal_w": 43,
+    "solar_w": 0,
+    "envelope_w": 0,
+    "load_w": 43,
+    "load_per_m2": 8.0,
+    "perimeter_w_m2": null,
+    "core_w_m2": 8.0,
+    "mode": "냉방",
+    "ac_kw": 0.0
+   },
+   "사○○실 (라벨 잘림)": {
+    "area": 22.5,
+    "people": 6,
+    "internal_w": 1350,
+    "solar_w": 190,
+    "envelope_w": -94,
+    "load_w": 1446,
+    "load_per_m2": 64.2,
+    "perimeter_w_m2": 67.1,
+    "core_w_m2": 60.0,
+    "mode": "냉방",
+    "ac_kw": 1.7
+   },
+   "전○○실 (라벨 잘림)": {
+    "area": 20.0,
+    "people": 5,
+    "internal_w": 1135,
+    "solar_w": 169,
+    "envelope_w": -84,
+    "load_w": 1220,
+    "load_per_m2": 61.0,
+    "perimeter_w_m2": 63.8,
+    "core_w_m2": 56.8,
+    "mode": "냉방",
+    "ac_kw": 1.4
+   },
+   "(미상) 소회의/작업실 A": {
+    "area": 7.8,
+    "people": 0,
+    "internal_w": 62,
+    "solar_w": 84,
+    "envelope_w": -42,
+    "load_w": 105,
+    "load_per_m2": 13.4,
+    "perimeter_w_m2": 15.1,
+    "core_w_m2": 8.0,
+    "mode": "냉방",
+    "ac_kw": 0.1
+   },
+   "(미상) 소회의/작업실 B": {
+    "area": 7.8,
+    "people": 0,
+    "internal_w": 62,
+    "solar_w": 84,
+    "envelope_w": -42,
+    "load_w": 105,
+    "load_per_m2": 13.4,
+    "perimeter_w_m2": 15.1,
+    "core_w_m2": 8.0,
+    "mode": "냉방",
+    "ac_kw": 0.1
+   },
+   "(미상) 회의실": {
+    "area": 11.9,
+    "people": 0,
+    "internal_w": 95,
+    "solar_w": 1215,
+    "envelope_w": -146,
+    "load_w": 1165,
+    "load_per_m2": 97.9,
+    "perimeter_w_m2": 97.9,
+    "core_w_m2": null,
+    "mode": "냉방",
+    "ac_kw": 1.3
+   },
+   "국세 공무원 구역": {
+    "area": 15.6,
+    "people": 3,
+    "internal_w": 710,
+    "solar_w": 134,
+    "envelope_w": -86,
+    "load_w": 758,
+    "load_per_m2": 48.6,
+    "perimeter_w_m2": 49.5,
+    "core_w_m2": 45.5,
+    "mode": "냉방",
+    "ac_kw": 0.9
+   },
+   "국세외 공무원 구역": {
+    "area": 29.3,
+    "people": 5,
+    "internal_w": 1209,
+    "solar_w": 1310,
+    "envelope_w": -241,
+    "load_w": 2278,
+    "load_per_m2": 77.9,
+    "perimeter_w_m2": 77.9,
+    "core_w_m2": null,
+    "mode": "냉방",
+    "ac_kw": 2.6
+   },
+   "국세외 전화 구역": {
+    "area": 58.4,
+    "people": 24,
+    "internal_w": 5147,
+    "solar_w": 1379,
+    "envelope_w": -104,
+    "load_w": 6423,
+    "load_per_m2": 110.0,
+    "perimeter_w_m2": 174.0,
+    "core_w_m2": 88.1,
+    "mode": "냉방",
+    "ac_kw": 7.4
+   },
+   "방문실태확인원 대기공간": {
+    "area": 81.4,
+    "people": 0,
+    "internal_w": 651,
+    "solar_w": 1922,
+    "envelope_w": -145,
+    "load_w": 2429,
+    "load_per_m2": 29.8,
+    "perimeter_w_m2": 93.9,
+    "core_w_m2": 8.0,
+    "mode": "냉방",
+    "ac_kw": 2.8
+   },
+   "출입 로비/안내": {
+    "area": 21.0,
+    "people": 2,
+    "internal_w": 558,
+    "solar_w": 0,
+    "envelope_w": 0,
+    "load_w": 558,
+    "load_per_m2": 26.6,
+    "perimeter_w_m2": null,
+    "core_w_m2": 26.6,
+    "mode": "냉방",
+    "ac_kw": 0.6
+   }
+  }
+ }
+}

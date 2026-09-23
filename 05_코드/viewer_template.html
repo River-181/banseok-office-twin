@@ -76,6 +76,7 @@ button[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);
     <button id="qual">품질: 보통</button>
     <button id="notes" aria-pressed="false">설명</button>
     <button id="tour">가이드 ◀▶</button>
+    <button id="noise" aria-pressed="false">소음맵</button>
   </div>
   <div class="seatmode">
     <button data-seat="seat" aria-pressed="true">좌석번호</button>
@@ -104,6 +105,7 @@ const PARK = __PARK__;
 const REPLAY = __REPLAY__;
 const SIGNS = __SIGNS__;
 const CALLOUTS = __CALLOUTS__;
+const NOISE = __NOISE__;
 const HAS_NAMES = __HAS_NAMES__;
 const GLB = "__GLB__";
 
@@ -253,6 +255,45 @@ document.getElementById("tour").onclick = () => {
 const parkLabel = document.createElement("div"); parkLabel.className = "room";
 parkLabel.textContent = "주차장 · 실제로는 다른 곳 (위치 미정)";
 const parkTag = new CSS2DObject(parkLabel); parkTag.position.set(PARK[0] + 3.5, PARK[1] + 3.2, PARK[2] + 8); scene.add(parkTag);
+
+// ---------- noise heat map (L2) ----------
+let noisePlane = null, noiseBare = false;
+function noiseTexture(cells) {
+  const nz = cells.length, nx = cells[0].length;
+  const cv = document.createElement("canvas"); cv.width = nx; cv.height = nz;
+  const ctx = cv.getContext("2d"), img = ctx.createImageData(nx, nz);
+  const lo = 45, hi = 68;                                  // dB range mapped to the colour ramp
+  for (let j = 0; j < nz; j++) for (let i = 0; i < nx; i++) {
+    const u = Math.max(0, Math.min(1, (cells[j][i] - lo) / (hi - lo)));
+    const k = (j * nx + i) * 4;
+    img.data[k] = Math.round(40 + 215 * u);                // quiet teal -> loud red
+    img.data[k + 1] = Math.round(150 - 110 * u);
+    img.data[k + 2] = Math.round(150 - 130 * u);
+    img.data[k + 3] = 165;
+  }
+  ctx.putImageData(img, 0, 0);
+  const tex = new THREE.CanvasTexture(cv); tex.magFilter = THREE.LinearFilter; return tex;
+}
+function buildNoise() {
+  if (!NOISE.grid) return;
+  const cell = NOISE.meta.cell, nz = NOISE.grid.length, nx = NOISE.grid[0].length;
+  const geo = new THREE.PlaneGeometry(nx * cell, nz * cell);
+  noisePlane = new THREE.Mesh(geo, new THREE.MeshBasicMaterial({ map: noiseTexture(NOISE.grid), transparent: true, depthWrite: false }));
+  noisePlane.rotation.x = -Math.PI / 2;
+  noisePlane.position.set(nx * cell / 2, FLOOR_Y + 0.03, nz * cell / 2);
+  noisePlane.visible = false;
+  scene.add(noisePlane);
+}
+buildNoise();
+document.getElementById("noise").onclick = e => {
+  const btn = e.currentTarget;
+  if (!noisePlane) return;
+  if (!noisePlane.visible) { noisePlane.visible = true; noiseBare = false; btn.setAttribute("aria-pressed", true); btn.textContent = "소음맵 (현재안)"; }
+  else if (!noiseBare) { noiseBare = true; noisePlane.material.map = noiseTexture(NOISE.bare); btn.textContent = "소음맵 (가벽 제거)"; }
+  else { noisePlane.visible = false; noiseBare = false; noisePlane.material.map = noiseTexture(NOISE.grid); btn.setAttribute("aria-pressed", false); btn.textContent = "소음맵"; }
+  const z = NOISE.zones["국세외 전화 구역"];
+  if (noisePlane.visible && z) document.getElementById("stat").textContent = `소음맵 · 전화 구역 평균 ${z.mean} dB, 최대 ${z.max} dB (통화 35% 가정)`;
+};
 
 const bytes = Uint8Array.from(atob(GLB), c => c.charCodeAt(0));
 new GLTFLoader().parse(bytes.buffer, "", gltf => {
